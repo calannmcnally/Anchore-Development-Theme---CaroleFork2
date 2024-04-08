@@ -45,7 +45,7 @@
         {
           "identifier": "homepage_video_url",
           "type": "text",
-          "description": "URL for the homepage video",
+          "description": "URL for the homepage video"
 
         },
         
