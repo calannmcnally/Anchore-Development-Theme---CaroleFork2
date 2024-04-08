@@ -40,12 +40,13 @@
           "type": "file",
           "description": "Image for the homepage hero banner",
           "label": "Hero banner Image"
-          
         },
         {
           "identifier": "homepage_video_url",
           "type": "text",
-          "description": "URL for the homepage video"
+          "description": "URL for the homepage video",
+          "label": "Homepage Video URL"
+
 
         },
         
