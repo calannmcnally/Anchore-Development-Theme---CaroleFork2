@@ -510,21 +510,21 @@
           "type": "color",
           "description": "link_color_description",
           "label": "link_color_label",
-          "value": "#1F73B7"
+          "value": "#9AA7BC"
         },
         {
           "identifier": "hover_link_color",
           "type": "color",
           "description": "hover_link_color_description",
           "label": "hover_link_color_label",
-          "value": "#0F3554"
+          "value": "#82BCF9"
         },
         {
           "identifier": "visited_link_color",
           "type": "color",
           "description": "visited_link_color_description",
           "label": "visited_link_color_label",
-          "value": "#9358B0"
+          "value": "#333742"
         },
         {
           "identifier": "background_color",
@@ -543,11 +543,11 @@
           "type": "list",
           "description": "heading_font_description",
           "label": "heading_font_label",
-          "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+          "value": "'Poppins', sans-serif",
           "options": [
             {
               "label": "System",
-              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+              "value": "'Poppins', sans-serif"
             },
             {
               "label": "Arial",
