@@ -4841,5 +4841,6 @@ body, button, input, select, textarea {
 
 .anchore-hero-header {
   color: $brand_text_color;
-font-family:$heading_font;
+ font-family:$heading_font;
+ 
 }
