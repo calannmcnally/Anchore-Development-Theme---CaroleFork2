@@ -32,8 +32,8 @@
           "identifier": "hero_banner_image",
           "type": "file",
           "description": "Image for the homepage hero banner",
-          "label": "Hero Banner Image",
-          "value": "https://via.placeholder.com/400"
+          "label": "Card_Icon_1",
+          
         },
        
         {
