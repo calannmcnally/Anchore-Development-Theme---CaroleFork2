@@ -4841,13 +4841,5 @@ body, button, input, select, textarea {
 
 .anchore-hero-header {
   color: $brand_text_color;
-  text-align: center;
-
-  /* Desktop/H1 */
-  font-family: $brand_font_family;
-  font-size: 56px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 110%; /* 61.6px */
-  letter-spacing: 0.56px;
+font-family:$heading_font;
 }
