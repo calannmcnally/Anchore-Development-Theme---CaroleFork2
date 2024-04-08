@@ -577,7 +577,7 @@ ul {
 }
 
 .form-field input[type=text] {
-  border: 1px solid $brand_color_slategrey;
+  border: 1px solid #9aa7bc;
   border-radius: 4px;
 }
 .form-field input[type=text]:focus {
@@ -590,7 +590,7 @@ ul {
 
 .form-field .nesty-input {
   border-radius: 4px;
-  border: 1px solid $brand_color_slategrey;
+  border: 1px solid #9aa7bc;
   height: 40px;
   line-height: 40px;
   outline: none;
@@ -602,7 +602,7 @@ ul {
 }
 
 .form-field .hc-multiselect-toggle {
-  border: 1px solid $brand_color_slategrey;
+  border: 1px solid #9aa7bc;
 }
 
 .form-field .hc-multiselect-toggle:focus {
@@ -705,7 +705,7 @@ ul {
 }
 .user-nav[aria-expanded=true] {
   background-color: #fff;
-  box-shadow: 0 0 4px 0 $brand_color_slategrey, 0 4px 10px 0 $brand_color_slategrey;
+  box-shadow: 0 0 4px 0 #9aa7bc, 0 4px 10px 0 #9aa7bc;
   border: solid 1px #ddd;
   right: 0;
   left: 0;
