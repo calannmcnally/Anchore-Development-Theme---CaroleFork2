@@ -2,7 +2,7 @@
 
 
 
-h1 {
+h1 .anchore-hero-header {
   box-sizing: border-box;
   color: $brand_text_color;
   font-family: 'Poppins', sans-serif;
@@ -4837,10 +4837,3 @@ body, button, input, select, textarea {
  font-family: 'Poppins', sans-serif;
 }
 
-/*hero banner text*/
-
-.anchore-hero-header {
-  color: $brand_text_color;
- font-family:$heading_font;
- font-size:80px;
-}
