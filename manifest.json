@@ -1,7 +1,7 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "3.4.4",
+  "version": "3.4.5",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -27,6 +27,13 @@
           "label": "Hero Banner Text",
           "value": "How can we help?"
         },
+        {
+          "identifier": "hero_banner_description",
+          "type": "text",
+          "description": "Description for the homepage hero banner",
+          "label": "Hero Banner Description",
+          "value": "Description for the homepage hero banner"
+        },
 
         {
           "identifier": "hero_banner_image",
@@ -35,6 +42,13 @@
           "label": "Hero banner Image"
           
         },
+        {
+          "identifier": "homepage_video_url",
+          "type": "text",
+          "description": "URL for the homepage video",
+
+        },
+        
         
          {
           "identifier": "category_card_icon_1",
