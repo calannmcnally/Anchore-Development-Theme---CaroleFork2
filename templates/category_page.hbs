@@ -1,0 +1,622 @@
+<style>
+  html .max-image-dimensions {
+  	max-height: 270px; 
+      width: 100%;
+    object-fit: contain;
+  }
+  
+	html .subsection-card-title {
+  		text-align: center;
+      font: normal normal normal 18px/36px 'Poppins';
+      letter-spacing: 0px;
+      color: #848484;
+      opacity: 1;
+  }
+  
+  html .article-content {
+    max-height: 600px;
+    overflow: hidden;
+}
+
+</style>
+
+<script>
+  globalThis.allArticles = [];
+globalThis.currentCategory = {
+	"id": {{category.id}},
+  "name": "{{category.name}}"  
+};
+globalThis.allSections = [
+  {{#each sections}}
+  	{
+  		"id": {{id}},
+  		"name": "{{name}}"
+  	}{{#unless @last}},{{/unless}}
+   {{/each}}
+  ];  
+
+const spinner = document.createElement('div');
+spinner.setAttribute('id', 'loadingSpinner');
+spinner.innerHTML = '<p>Loading...</p>'; 
+document.body.appendChild(spinner);
+  
+const fetchAllArticles = async () => {
+    let page = 1;
+    let hasMorePages = true;
+
+    while (hasMorePages) {
+        const response = await fetch(`/api/v2/help_center/{{help_center.locale}}/articles?include=categories&per_page=100&page=${page}`);
+        const data = await response.json();
+  
+  			console.log(data)
+
+        // Filter articles with non-empty body
+        const filteredArticles = data.articles.filter(article => article.body);
+        allArticles.push(...filteredArticles);
+
+        hasMorePages = data.page_count > page;
+        page++;
+    }
+};
+  
+  const decodeHtmlEntities = (text) => {
+  const textArea = document.createElement('textarea');
+  textArea.innerHTML = text;
+  return textArea.value;
+};
+
+fetchAllArticles().then(() => {
+    const matchingArticles = allArticles.filter(article => 
+        article.label_names.includes(currentCategory.name)
+    );
+
+    const groupedArticles = {};
+
+    matchingArticles.forEach(article => {
+        const matchingSections = allSections.filter(section => {
+            const decodedSectionName = decodeHtmlEntities(section.name).toLowerCase();
+            return article.label_names.some(label => label.toLowerCase() === decodedSectionName);
+        });
+
+        matchingSections.forEach(section => {
+            if (!groupedArticles[section.id]) {
+                groupedArticles[section.id] = {
+                    sectionName: section.name,
+                    articles: []
+                };
+            }
+            groupedArticles[section.id].articles.push(article);
+        });
+    });
+  
+    console.log('grouped articles', groupedArticles)
+
+     allSections.forEach(section => {
+        const group = groupedArticles[section.id];
+        if (group) {
+            const sectionDiv = document.createElement('div');
+            const sectionHeader = document.createElement('h3');
+            sectionHeader.textContent = group.sectionName;
+            //sectionDiv.appendChild(sectionHeader);
+
+           group.articles.forEach((article, index) => {
+    const accordionItem = document.createElement('div');
+    accordionItem.className = 'accordion-item mb-4';
+    accordionItem.setAttribute('data-section', section.id);
+
+    const accordionHeader = document.createElement('h3');
+    accordionHeader.className = 'accordion-header text-left';
+
+    const accordionButton = document.createElement('button');
+    accordionButton.className = 'accordion-article-button bg-gray-200 w-100 w-full px-6 py-4 text-left rounded-lg accordion-button focus:outline-none transition duration-150 ease-in-out flex justify-between';
+    accordionButton.setAttribute('type', 'button');
+    accordionButton.setAttribute('onclick', `toggleAccordion('article-${section.id}${index}')`);
+
+    const titleSpan = document.createElement('span');
+    titleSpan.textContent = article.title;
+
+    const iconSpan = document.createElement('span');
+    iconSpan.id = `icon-article-${section.id}${index}`;
+    iconSpan.className = 'accordion-icon';
+    iconSpan.textContent = '+';
+
+    accordionButton.appendChild(titleSpan);
+    accordionButton.appendChild(iconSpan);
+
+    accordionHeader.appendChild(accordionButton);
+    accordionItem.appendChild(accordionHeader);
+
+    const accordionCollapse = document.createElement('div');
+    accordionCollapse.id = `article-${section.id}${index}`;
+    accordionCollapse.className = 'accordion-collapse';
+    accordionCollapse.style.display = 'none';
+
+    const accordionBody = document.createElement('div');
+    accordionBody.className = 'accordion-body p-4';
+
+    const articleContent = document.createElement('div');
+    articleContent.className = 'article-content';
+    articleContent.style.maxHeight = '600px';
+    articleContent.style.overflow = 'auto';
+    articleContent.id = `content-${section.id}${index}`;
+    articleContent.innerHTML = article.body; // or use decodeHtmlEntities(article.body) if needed
+
+    const viewArticleLink = document.createElement('a');
+    viewArticleLink.href = article.html_url;
+    viewArticleLink.className = 'view-article-link block text-center mx-auto mt-3';
+    viewArticleLink.textContent = 'View article';
+
+    accordionBody.appendChild(articleContent);
+    accordionBody.appendChild(viewArticleLink);
+
+    accordionCollapse.appendChild(accordionBody);
+    accordionItem.appendChild(accordionCollapse);
+
+    sectionDiv.appendChild(accordionItem);
+});
+
+             document.getElementById(`section-container-${section.id}`).appendChild(sectionDiv);
+           // document.querySelector('#storeArticles').appendChild(sectionDiv);
+        }
+    });
+
+    // Remove the loading spinner after loading the articles
+    const loadingSpinner = document.getElementById('loadingSpinner');
+    if (loadingSpinner) {
+        loadingSpinner.remove();
+    }
+});
+
+</script>
+
+
+<section class="relative bg-cover bg-center overflow-hidden text-white sm:py-20" style="background-image: url('{{settings.homepage_background_image}}');">
+  <div class="container mx-auto text-center relative z-10 px-6 py-8 sm:py-12">
+    <h1 class="next-base-hero">{{settings.hero_banner_text}}</h1>
+    <div class="max-w-3xl mx-auto relative">
+        <img src="{{settings.search_icon}}" alt="Search Icon" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-9 sm:h-9" />
+        {{search class="next-base-search w-full mt-2 sm:mt-10 pl-14 pr-3 focus:outline-none focus:ring-2 focus:ring-blue-500" submit=false placeholder="Search for help articles using keywords"}}
+    </div>
+  </div>
+</section>
+
+<section class="pb-20 bg-gray-200">
+  <div class="container mx-auto px-6 md:py-0">
+    <div class="py-8">
+      {{breadcrumbs}}
+    </div>
+
+    <h2 class="text-center mb-3">{{category.name}}</h2>
+    <div class="block sm:hidden"> 
+    	{{#is category.name settings.category_card_1_name}}
+    			<img src="{{settings.category_card_icon_1}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+			{{/is}}
+      {{#is category.name settings.category_card_2_name}}
+          <img src="{{settings.category_card_icon_2}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_3_name}}
+          <img src="{{settings.category_card_icon_3}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_4_name}}
+          <img src="{{settings.category_card_icon_4}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_5_name}}
+          <img src="{{settings.category_card_icon_5}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_6_name}}
+          <img src="{{settings.category_card_icon_6}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_7_name}}
+          <img src="{{settings.category_card_icon_7}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_8_name}}
+          <img src="{{settings.category_card_icon_8}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_9_name}}
+          <img src="{{settings.category_card_icon_9}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_10_name}}
+          <img src="{{settings.category_card_icon_10}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto"/>
+      {{/is}}
+      {{#is category.name settings.category_card_11_name}}
+          <img src="{{settings.category_card_icon_11}}" alt="Description" class="h-10 mb-4 px-4 block mx-auto max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_12_name}}
+          <img src="{{settings.category_card_icon_12}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4"/>
+      {{/is}}
+      {{#is category.name settings.category_card_13_name}}
+          <img src="{{settings.category_card_icon_13}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4"/>
+      {{/is}}
+      {{#is category.name settings.category_card_14_name}}
+          <img src="{{settings.category_card_icon_14}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4"/>
+      {{/is}}
+      {{#is category.name settings.category_card_15_name}}
+          <img src="{{settings.category_card_icon_15}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4"/>
+      {{/is}}
+      {{#is category.name settings.category_card_16_name}}
+          <img src="{{settings.category_card_icon_16}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4"/>
+      {{/is}}
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <!-- First Column: Sections with Icons -->
+      <div class="lg:col-span-3 flex-col flex gap-3">
+        {{#each sections}}
+          <a href="{{url}}" data-section={{this.id}} data-name="{{this.name}}" class="bg-white sm:shadow-none bg-white shadow-[0px_3px_6px_#00000029] next-section-button bg-white sm:bg-transparent sm:border sm:border-gray-400 border-radius-34px flex items-center transparent px-3 py-4 transition duration-300 transform hover:translate-x-1 hover:shadow-xl active:bg-white justify-between {{#is @index 0}}active{{/is}}">
+            <div class="flex gap-2">
+              {{#is @index 0}}
+                  <img src="{{../settings.section_card_icon_1}}" data-active="{{../settings.section_card_icon_1_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 1}}
+                  <img src="{{../settings.section_card_icon_2}}" data-active="{{../settings.section_card_icon_2_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 2}}
+                  <img src="{{../settings.section_card_icon_3}}" data-active="{{../settings.section_card_icon_3_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 3}}
+                  <img src="{{../settings.section_card_icon_4}}" data-active="{{../settings.section_card_icon_4_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 4}}
+                  <img src="{{../settings.section_card_icon_5}}" data-active="{{../settings.section_card_icon_5_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 5}}
+                  <img src="{{../settings.section_card_icon_6}}" data-active="{{../settings.section_card_icon_6_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 6}}
+                  <img src="{{../settings.section_card_icon_7}}" data-active="{{../settings.section_card_icon_7_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 7}}
+                  <img src="{{../settings.section_card_icon_8}}" data-active="{{../settings.section_card_icon_8_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 8}}
+                  <img src="{{../settings.section_card_icon_9}}" data-active="{{../settings.section_card_icon_9_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 9}}
+                  <img src="{{../settings.section_card_icon_10}}" data-active="{{../settings.section_card_icon_10_active}}" class="h-6 object-fit"/>
+              {{/is}}
+              {{#is @index 10}}
+                  <img src="{{../settings.section_card_icon_11}}" data-active="{{../settings.section_card_icon_11_active}}" class="h-6 object-fit"/>
+              {{/is}}
+
+              <span class="pl-4">{{name}}</span>
+            </div>
+            <span class="down-arrow" style="display: none;">
+              <svg id="fi_2985150" enable-background="new 0 0 128 128" height="24" viewBox="0 0 128 128" width="24" xmlns="http://www.w3.org/2000/svg"><path id="Down_Arrow_3_" d="m64 88c-1.023 0-2.047-.391-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l37.172 37.172 37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40c-.781.781-1.805 1.172-2.828 1.172z"></path></svg></span>
+          </a>
+        {{/each}}
+        
+        
+        
+          <a  data-section="DownloadsSection" data-name="DownloadsSection" class="bg-white sm:shadow-none bg-white shadow-[0px_3px_6px_#00000029] next-section-button bg-white sm:bg-transparent sm:border sm:border-gray-400 border-radius-34px flex items-center transparent px-3 py-4 transition duration-300 transform hover:translate-x-1 hover:shadow-xl active:bg-white justify-between">
+            <div class="flex gap-2">
+             
+        
+                  <img src="{{settings.section_card_icon_11}}" data-active="{{settings.section_card_icon_11_active}}" class="h-6 object-fit"/>
+        
+
+              <span class="pl-4">Downloads</span>
+            </div>
+            <span class="down-arrow" style="display: none;">
+              <svg id="fi_2985150" enable-background="new 0 0 128 128" height="24" viewBox="0 0 128 128" width="24" xmlns="http://www.w3.org/2000/svg"><path id="Down_Arrow_3_" d="m64 88c-1.023 0-2.047-.391-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l37.172 37.172 37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40c-.781.781-1.805 1.172-2.828 1.172z"></path></svg></span>
+          </a>
+        
+      </div>
+
+			<div class="lg:col-span-6">
+        <div id="accordion" class="bg-white border-radius-30px px-5 py-3" style="border: 1px solid #B5B5B5;">
+          {{#each sections}}
+          <div data-parentSection={{this.id}}>
+            <p class="text-left next-section-title pb-4 mb-0 leading-9" data-sectionTitle={{this.id}}>{{this.name}}</p>
+           
+            {{#if this.description}}	
+            	<p class="text-left">{{this.description}}</p>
+            {{/if}}
+              {{#if this.sections}}
+               <div class="gap-3 flex justify-center">
+            		{{#each this.sections}}
+                 <div class="section-card border w-32 h-32 rounded-2xl p-4" data-description="{{this.description}}">
+                     {{#is @index 0}}
+                   		<img src="{{../../settings.subsection_card_icon_1}}" class="h-14 block mx-auto" />
+                    {{/is}}
+                   {{#is @index 1}}
+                   		<img src="{{../../settings.subsection_card_icon_2}}" class="h-14 block mx-auto" />
+                    {{/is}}
+                   {{#is @index 2}}
+                   		<img src="{{../../settings.subsection_card_icon_3}}" class="h-14 block mx-auto" />
+                    {{/is}}
+                   {{#is @index 3}}
+                   		<img src="{{../../settings.subsection_card_icon_4}}" class="h-14 block mx-auto" />
+                    {{/is}}
+										{{#is @index 4}}
+                   		<img src="{{../../settings.subsection_card_icon_5}}" class="h-14 block mx-auto" />
+                    {{/is}}
+                   <span class="block subsection-card-title">{{excerpt this.name}}</span>
+                 </div>
+                  {{/each}}
+            		</div>
+                {{/if}}
+            
+                  <div id="section-container-{{this.id}}">
+                  </div>
+          	</div>
+          {{/each}}
+           <div data-parentSection="DownloadsSection">
+            <p class="text-left next-section-title pb-4 mb-0 leading-9" data-sectionTitle="DownloadsSection">Downloads</p>
+           
+               <div class="gap-3 flex justify-center">
+                 <a id="manualsIcon" class="section-card border w-32 h-32 rounded-2xl p-4" data-description="Manuals"> 
+                   		<img src="{{settings.subsection_card_icon_3}}" class="h-14 block mx-auto" />                    
+                   		<span class="block subsection-card-title">Manuals</span>
+                 </a>
+
+            		</div>
+
+                  <div id="section-container-DownloadsSection">
+                  </div>
+          	</div>
+        </div>
+      </div>
+
+      <!-- Third Column: Image Display -->
+      <div class="lg:col-span-3">
+       {{#is category.name settings.category_card_1_name}}
+    			<img src="{{settings.category_card_icon_1}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+			{{/is}}
+      {{#is category.name settings.category_card_2_name}}
+          <img src="{{settings.category_card_icon_2}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_3_name}}
+          <img src="{{settings.category_card_icon_3}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_4_name}}
+          <img src="{{settings.category_card_icon_4}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_5_name}}
+          <img src="{{settings.category_card_icon_5}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_6_name}}
+          <img src="{{settings.category_card_icon_6}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_7_name}}
+          <img src="{{settings.category_card_icon_7}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_8_name}}
+          <img src="{{settings.category_card_icon_8}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_9_name}}
+          <img src="{{settings.category_card_icon_9}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_10_name}}
+          <img src="{{settings.category_card_icon_10}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_11_name}}
+          <img src="{{settings.category_card_icon_11}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_12_name}}
+          <img src="{{settings.category_card_icon_12}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_13_name}}
+          <img src="{{settings.category_card_icon_13}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_14_name}}
+          <img src="{{settings.category_card_icon_14}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_15_name}}
+          <img src="{{settings.category_card_icon_15}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+      {{#is category.name settings.category_card_16_name}}
+          <img src="{{settings.category_card_icon_16}}" alt="Description" class="border-radius-30px border border-gray-400 py-8 px-4 max-image-dimensions"/>
+      {{/is}}
+
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{{#if settings.disable_defaults}}
+  <section class="py-4 mt-4 mb-5 sm:py-10 sm:mt-14 sm:mb-10">
+    <div class="container mx-auto px-3 sm:px-6 text-center">
+      <h2 class="next-promoted-articles-title pb-6">{{settings.popular_articles_text}}</h2>
+      <div class="pt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2 max-w-xl2">
+        {{#each promoted_articles}}
+          <div class="p-2 sm:p-1">
+            <a href="{{url}}" class="flex flex-row gap-3 items-start mb-0 sm:mb-2">
+                <div class="flex flex-shrink-0">
+                  <img src="{{../settings.popular_articles_icon}}" class="object-contain w-4 h-4 mt-3" /> 
+                </div> 
+                <div clas="flex flex-col">
+                  <h4 class="next-promoted-article text-left" style="margin:0">{{title}}</h4> 
+                </div>
+            </a>      
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/if}}
+
+<script>
+const sectionButtons = document.querySelectorAll('.next-section-button');
+const parentSections = document.querySelectorAll('[data-parentSection]');
+
+function isMobileDevice() {
+    console.log('is this a mobile', window.innerWidth)
+    return window.innerWidth <= 800; 
+}
+
+const hideAllParentSections = () => {
+    parentSections.forEach(parentSection => {
+        parentSection.style.display = 'none';
+    });
+    sectionButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+};
+
+const toggleSectionButtonsVisibilityOnMobile = (hide, exceptSectionId) => {
+    if (isMobileDevice()) {
+        sectionButtons.forEach(button => {
+            if (hide && button.getAttribute('data-section') !== exceptSectionId) {
+                button.style.display = 'none';
+  							console.log('hidden button', button.querySelector('.down-arrow'))
+  							button.querySelector('.down-arrow').style.display = 'none'
+            } else {
+                button.style.display = 'flex';
+  							console.log('static button', button.querySelector('.down-arrow'))
+  							button.querySelector('.down-arrow').style.display = 'block'
+  							if(isMobileDevice()) document.querySelector('#accordion').style.display = 'block'
+            }
+        });
+    }
+};
+
+const showParentSection = (parentSectionId) => {
+    const parentSection = document.querySelector(`[data-parentSection="${parentSectionId}"]`);
+    const isActive = parentSection && parentSection.style.display === 'block';
+
+    if (isMobileDevice()) {
+        // Mobile behavior
+        if (isActive) {
+            // If the section is already active, hide it and show all buttons
+            hideAllParentSections();
+            toggleSectionButtonsVisibilityOnMobile(false);
+        } else {
+            // Otherwise, show only the selected section and hide other buttons
+            hideAllParentSections();
+            parentSection.style.display = 'block';
+            const activeButton = document.querySelector(`.next-section-button[data-section="${parentSectionId}"]`);
+            if (activeButton) activeButton.classList.add('active');
+            toggleSectionButtonsVisibilityOnMobile(true, parentSectionId);
+        }
+    } else {
+        // Non-mobile behavior
+        hideAllParentSections();
+        parentSection.style.display = 'block';
+        const activeButton = document.querySelector(`.next-section-button[data-section="${parentSectionId}"]`);
+        if (activeButton) activeButton.classList.add('active');
+    }
+};
+
+sectionButtons.forEach(button => {
+    button.addEventListener('click', e => {
+        e.preventDefault();
+        const sectionId = button.getAttribute('data-section');
+        showParentSection(sectionId);
+    });
+});
+  
+  window.addEventListener('resize', () => {
+    if (!isMobileDevice()) {
+        // Show all section buttons on desktop
+        sectionButtons.forEach(button => {
+            button.style.display = 'flex';
+            button.querySelector('.down-arrow').style.display = 'none';
+        });
+    }
+});
+
+const toggleAccordion = id => {
+    const element = document.getElementById(id);
+    const isCollapsed = element.style.display === 'none';
+    const parentSectionId = element.closest('[data-parentSection]').getAttribute('data-parentSection');
+
+    // Close all other articles in the same section
+    document.querySelectorAll(`[data-parentSection="${parentSectionId}"] .accordion-collapse`).forEach(item => {
+        if (item.id !== id) {
+            item.style.display = 'none';
+            // Update the icon for the closed item
+            const iconElement = document.getElementById(`icon-${item.id}`);
+            if (iconElement) {
+                iconElement.textContent = '+';
+            }
+        }
+    });
+
+    // Toggle the current article
+    element.style.display = isCollapsed ? 'block' : 'none';
+
+    // Update the icon for the current article
+    const iconElement = document.getElementById(`icon-${id}`);
+    if (iconElement) {
+        iconElement.textContent = isCollapsed ? '-' : '+';
+    }
+
+    // Scroll to the element if it is expanded
+    if (isCollapsed) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  		if (sectionButtons.length  && !isMobileDevice()) sectionButtons[0].click();
+	
+  	if(isMobileDevice()) document.querySelector('#accordion').style.display = 'none'	
+  
+    const images = document.querySelectorAll('img[data-active]');
+
+    images.forEach(image => {
+        // Store the original src of the image
+        const originalSrc = image.getAttribute('src');
+  
+  			console.log(image)
+
+        const observer = new MutationObserver(() => {
+            if (image.parentElement.parentElement.classList.contains('active')) {
+                image.setAttribute('src', image.getAttribute('data-active'));
+            } else {
+                image.setAttribute('src', originalSrc);
+            }
+        });
+
+        observer.observe(image.parentElement.parentElement, { attributes: true });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sectionCards = document.querySelectorAll('.section-card');
+
+  sectionCards.forEach(card => {
+    const description = card.getAttribute('data-description');
+    const externalLinkMatch = description.match(/\|External: (https?:\/\/\S+)\|\|/);
+
+    if (externalLinkMatch) {
+      const externalUrl = externalLinkMatch[1];
+      card.outerHTML = `<a href="${externalUrl}" class="${card.className}">${card.innerHTML}</a>`;
+    }
+  });    
+});
+  
+const fetchData = async () => {
+  try {
+    const response = await fetch('{{asset 'NextBaseTest.json'}}');
+    const data = await response.json();
+
+    if (typeof data === 'object') {
+      globalThis.DownloadLinks = data;
+      console.log('Parsed JSON data:', globalThis.DownloadLinks);
+
+      const originalKey = 'NBDVR{{category.name}}'; // Replace with your original key
+
+      // Check if the original key exists in DownloadLinks, if not, append 'A'
+      const keyToUse = globalThis.DownloadLinks.hasOwnProperty(originalKey) ? originalKey : originalKey + 'A';
+
+      const downloadInfo = globalThis.DownloadLinks[keyToUse]?.filter(item => item.iso === 'EN');
+      console.log('Item Found:', downloadInfo);
+  
+  		document.querySelector('#manualsIcon').href = downloadInfo[0]?.cdnDownloadUrl
+
+      globalThis.DownloadObject = downloadInfo;
+    } else {
+      console.error('Fetched data is not an object');
+    }
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+  }
+};
+
+fetchData();
+
+  
+
+</script>

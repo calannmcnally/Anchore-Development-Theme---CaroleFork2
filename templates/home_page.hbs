@@ -1,0 +1,147 @@
+<div class="anchore-bg text-white p-12">
+  <div class="container mx-auto flex flex-wrap items-center">
+    <!-- Left Column -->
+    <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
+      <h1 class="text-white text-3xl mb-4">Hero Text Here</h1>
+      <p class="text-white mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin scelerisque enim a sapien volutpat placerat. Nunc efficitur velit ex, interdum auctor neque efficitur et. Aenean vehicula turpis eu sodales suscipit.</p>
+      <div class="max-w-md mx-auto lg:mx-0">
+        {{search}}
+      </div>
+      <div class="flex justify-center lg:justify-start space-x-4 mt-4">
+        <a href="#" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-3xl">CTA 1</a>
+        <a href="#" class="bg-white hover:bg-blue-700 text-blue-700 font-semibold hover:text-white py-2 px-6 border border-blue-500 hover:border-transparent rounded-3xl">CTA 2</a>
+      </div>
+    </div>
+    
+    <!-- Right Column -->
+    <div class="w-full lg:w-1/2 flex justify-center lg:justify-end px-4">
+      <img src="https://via.placeholder.com/400" alt="Placeholder Image" class="max-w-xs">
+    </div>
+  </div>
+</div>
+
+
+<div class="bg-gray-100 py-12">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto mb-6">
+      <h2 class="text-2xl font-semibold text-center mb-4">Lorem ipsum dolor sit amet</h2>
+      <div class="relative overflow-hidden pb-56">
+        <iframe class="absolute top-0 left-0 w-full h-full" src="https://player.vimeo.com/video/347119375" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--NB card styling-->
+<section class="pb-5 sm:pb-10 bg-gray-200 bg-no-repeat bg-origin-padding">
+  <div class="container mx-auto text-center category-cards py-4 px-3 sm:py-10">
+    <h2 class="text-2xl font-semibold text-center mb-4"></h2>
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-8 px-5">
+      {{#each categories}}
+        <a href="{{url}}" class="card-link transform transition duration-300 ease-in-out bg-transparent border border-gray-400 px-4 py-4 shadow-sm hover:bg-white hover:scale-105 hover:shadow-lg hover:border-transparent hover:shadow-outline hover:font-semibold hover:text-black next-card-title rounded-lg">
+          <div class="sm:mb-4">
+        {{#is @index 0}}
+          <img src="{{../settings.category_card_icon_1}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 1}}
+          <img src="{{../settings.category_card_icon_2}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 2}}
+          <img src="{{../settings.category_card_icon_3}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 3}}
+          <img src="{{../settings.category_card_icon_4}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 4}}
+          <img src="{{../settings.category_card_icon_5}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 5}}
+          <img src="{{../settings.category_card_icon_6}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 6}}
+          <img src="{{../settings.category_card_icon_7}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 7}}
+          <img src="{{../settings.category_card_icon_8}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 8}}
+          <img src="{{../settings.category_card_icon_9}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 9}}
+          <img src="{{../settings.category_card_icon_10}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 10}}
+          <img src="{{../settings.category_card_icon_11}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 11}}
+          <img src="{{../settings.category_card_icon_12}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 12}}
+          <img src="{{../settings.category_card_icon_13}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 13}}
+          <img src="{{../settings.category_card_icon_14}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        {{#is @index 14}}
+          <img src="{{../settings.category_card_icon_15}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+         {{#is @index 15}}
+          <img src="{{../settings.category_card_icon_16}}" class="mx-auto object-contain max-image-size" />
+        {{/is}}
+        <!-- Add more conditions for other indices if needed -->
+      </div>
+      <span class="text-title">{{this.name}}</span>
+          <p class="text-sm text-gray-600 mt-2 line-clamp-2">{{this.description}}</p>
+    </a>
+  {{/each}}
+</div>
+  </div>
+</section>
+<!--end of NB card styling-->
+<!--CM dynamic cards
+<div class="container mx-auto p-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="categoryContainer">
+   
+  </div>
+</div>
+End of CM dynamic cards-->
+
+<!--<div class="container mx-auto p-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/0000FF/808080?text=1" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/FF0000/FFFFFF?text=2" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/FFFF00/000000?text=3" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/00FF00/000000?text=4" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/00FFFF/000000?text=5" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/FF00FF/FFFFFF?text=6" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/800080/FFFFFF?text=7" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+<div class="flex flex-col items-center text-center p-4 shadow-lg rounded-lg">
+  <img src="https://via.placeholder.com/64/FFA500/FFFFFF?text=8" alt="Icon" class="w-16 h-16 mb-2">
+  <span>Category Text</span>
+</div>
+
+  </div>
+</div>-->
+
+

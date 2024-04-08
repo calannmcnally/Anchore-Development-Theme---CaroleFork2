@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.6.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 39.7 39.7" style="enable-background:new 0 0 39.7 39.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_00000023274281833019865200000017991188313212556707_);}
+	.st1{fill:url(#Path_111_00000088134698386404957260000014637738065149965729_);}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<g id="Group_80" transform="translate(0 0)">
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="1.5" y="1.5" width="36.7" height="36.7"/>
+		</defs>
+		<clipPath id="SVGID_00000165939639210195091460000016953901627589750452_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g id="Mask_Group_1" style="clip-path:url(#SVGID_00000165939639210195091460000016953901627589750452_);">
+			
+				<linearGradient id="Path_111_00000102510974433171259040000006704549215369072286_" gradientUnits="userSpaceOnUse" x1="1.0151" y1="595.4773" x2="2.0257" y2="595.4773" gradientTransform="matrix(36.304 0 0 -36.3081 -35.3597 21640.502)">
+				<stop  offset="0" style="stop-color:#1485EF"/>
+				<stop  offset="1" style="stop-color:#990AE2"/>
+			</linearGradient>
+			<path id="Path_111" style="fill:url(#Path_111_00000102510974433171259040000006704549215369072286_);" d="M38.1,2.3
+				c0-0.3-0.3-0.6-0.6-0.6C37,1.6,27.2,0.3,20.3,7.1c-0.7,0.7-1.5,1.5-2.3,2.3L11,8.9c-0.2,0-0.4,0.1-0.6,0.2l-8.6,8.6
+				c-0.3,0.3-0.3,0.8,0,1.1C1.8,18.9,2,19,2.2,19l7.2,0.6l1.6,1.6c-1.7,0.3-3.3,1.1-4.5,2.3c-2.6,2.6-2.8,5.1-2.9,7.5
+				c-0.1,2-0.2,3.9-1.8,5.9c-0.3,0.3-0.2,0.8,0.1,1.1c0.3,0.2,0.7,0.2,0.9,0c2-1.6,3.9-1.7,5.9-1.8c2.4-0.1,4.8-0.3,7.5-2.9
+				c1.2-1.2,2.1-2.8,2.3-4.5l1.6,1.6l0.6,7.2c0,0.4,0.4,0.7,0.8,0.7c0.2,0,0.3-0.1,0.5-0.2l8.6-8.6c0.2-0.2,0.2-0.4,0.2-0.6
+				l-0.6-7.1l2.3-2.3C39.4,12.5,38.1,2.7,38.1,2.3"/>
+			<path id="Path_112" class="st2" d="M12.6,21.7l-1,3l3.4,3.4l3-1"/>
+			<circle id="Ellipse_14" class="st2" cx="24.6" cy="15.1" r="3.6"/>
+			<path id="Path_113" class="st2" d="M27.6,3.5c0.4,4.6,4,8.2,8.6,8.6"/>
+			<line id="Line_62" class="st2" x1="19" y1="20.7" x2="16.4" y2="23.3"/>
+			<line id="Line_63" class="st2" x1="13.2" y1="26.5" x2="10.5" y2="29.2"/>
+		</g>
+	</g>
+</g>
+</svg>
