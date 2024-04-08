@@ -33,7 +33,7 @@
           "type": "file",
           "description": "Image for the homepage hero banner",
           "label": "Hero Banner Image",
-          "value": "https://via.placeholder.com/400"
+          
         },
        
         {
