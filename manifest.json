@@ -535,13 +535,7 @@
           "label": "brand_color_label",
           "value": "#3e66cd"
         },
-        {
-          "identifier": "brand_color_slategrey",
-          "type": "color",
-          "description": "brand_color_description",
-          "label": "brand_color_label",
-          "value": "#09aa7bc"
-        },
+
         {
           "identifier": "text_color",
           "type": "color",
