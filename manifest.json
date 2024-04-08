@@ -1,7 +1,7 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "3.2.4",
+  "version": "3.2.5",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -32,7 +32,7 @@
           "identifier": "hero_banner_image",
           "type": "file",
           "description": "Image for the homepage hero banner",
-          "label": "Card_Icon_1",
+          "label": "Hero banner Image",
           
         },
        
