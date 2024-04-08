@@ -535,7 +535,6 @@
           "label": "brand_color_label",
           "value": "#3e66cd"
         },
-
         {
           "identifier": "text_color",
           "type": "color",
@@ -569,7 +568,7 @@
           "type": "color",
           "description": "background_color_description",
           "label": "background_color_label",
-          "value": "#F2f5f8"
+          "value": "#FFFFFF"
         }
       ]
     },
@@ -658,7 +657,7 @@
           "options": [
             {
               "label": "System",
-              "value": "'Poppins', sans-serif'"
+              "value": "'Poppins', sans-serif"
             },
             {
               "label": "Arial",
