@@ -2,7 +2,8 @@
 
 
 
-h1 .anchore-hero-header {
+h1,
+ .anchore-hero-header {
   box-sizing: border-box;
   color: $brand_text_color;
   font-family: 'Poppins', sans-serif;
