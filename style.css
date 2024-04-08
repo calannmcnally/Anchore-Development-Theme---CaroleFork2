@@ -270,7 +270,7 @@ h4 {
 }
 
 .bg-dark-text {
-  color:#f2f5f8;
+  color: #f2f5f8 !important;
 }
 
 input,
