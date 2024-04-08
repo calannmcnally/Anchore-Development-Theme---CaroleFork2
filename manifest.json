@@ -1,7 +1,7 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "3.3.5",
+  "version": "3.3.6",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -37,7 +37,7 @@
         },
         {
           "identifier": "hero_video_url",
-          "variable": "hero_video_url",
+          
           "type": "text",
           "description": "Video URL for the homepage hero banner",
         },
