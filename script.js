@@ -776,4 +776,17 @@ const categoryData = [
     }
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+    // Select all category card links within the 'category-cards' section
+    const categoryCards = document.querySelectorAll('.category-cards .card-link');
+  
+    // Loop through the category cards and hide those beyond the 15th
+    categoryCards.forEach((card, index) => {
+      if (index >= 15) {
+        card.style.display = 'none';
+      }
+    });
+  });
+  
+
 })();
