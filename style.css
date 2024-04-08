@@ -6,7 +6,7 @@ h1,
  .anchore-hero-header {
   box-sizing: border-box;
   color: $brand_text_color;
-  font-family: $heading_font;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   font-weight: 600;
   letter-spacing: -.05em;
@@ -301,11 +301,11 @@ select {
   -moz-appearance: none;
   background: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23CCC' d='M0 0h10L5 6 0 0z'/%3E%3C/svg%3E%0A") no-repeat #fff;
   background-position: right 10px center;
-  border: 1px solid #9aa7bc;
+  border: 1px solid #87929D;
   border-radius: 4px;
   padding: 8px 30px 8px 10px;
   outline: none;
-  color: #333742;
+  color: #555;
   width: 100%;
 }
 select:focus {
@@ -316,7 +316,7 @@ select::-ms-expand {
 }
 
 textarea {
-  border: 1px solid #333742;
+  border: 1px solid #87929D;
   border-radius: 2px;
   resize: vertical;
   width: 100%;
@@ -340,7 +340,7 @@ textarea:focus {
 }
 
 .container-divider {
-  border-top: 1px solid #82bcf9;
+  border-top: 1px solid #ddd;
   margin-bottom: 20px;
 }
 
@@ -577,7 +577,7 @@ ul {
 }
 
 .form-field input[type=text] {
-  border: 1px solid #9aa7bc;
+  border: 1px solid #87929D;
   border-radius: 4px;
 }
 .form-field input[type=text]:focus {
@@ -590,7 +590,7 @@ ul {
 
 .form-field .nesty-input {
   border-radius: 4px;
-  border: 1px solid #9aa7bc;
+  border: 1px solid #87929D;
   height: 40px;
   line-height: 40px;
   outline: none;
@@ -602,7 +602,7 @@ ul {
 }
 
 .form-field .hc-multiselect-toggle {
-  border: 1px solid #9aa7bc;
+  border: 1px solid #87929D;
 }
 
 .form-field .hc-multiselect-toggle:focus {
@@ -705,7 +705,7 @@ ul {
 }
 .user-nav[aria-expanded=true] {
   background-color: #fff;
-  box-shadow: 0 0 4px 0 #9aa7bc, 0 4px 10px 0 #9aa7bc;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.15), 0 4px 10px 0 rgba(0, 0, 0, 0.1);
   border: solid 1px #ddd;
   right: 0;
   left: 0;
