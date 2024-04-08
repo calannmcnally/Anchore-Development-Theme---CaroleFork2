@@ -32,7 +32,7 @@
           "identifier": "hero_banner_image",
           "type": "file",
           "description": "Image for the homepage hero banner",
-          "label": "Hero banner Image",
+          "label": "Hero banner Image"
           
         },
        
