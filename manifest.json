@@ -37,7 +37,7 @@
         },
         {
           "identifier": "hero_video_url",
-          "variable": "herp_video_url",
+          "variable": "hero_video_url",
           "type": "text",
           "description": "Video URL for the homepage hero banner",
         },
