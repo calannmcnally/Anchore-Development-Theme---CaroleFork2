@@ -515,11 +515,32 @@
           "value": "#0E40C0"
         },
         {
+          "identifier": "brand_color_black",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#0f131f"
+        },
+        {
           "identifier": "brand_text_color",
           "type": "color",
           "description": "brand_text_color_description",
           "label": "brand_text_color_label",
-          "value": "#F2F5F8"
+          "value": "#333742"
+        },
+        {
+          "identifier": "brand_color_dmblue",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#3e66cd"
+        },
+        {
+          "identifier": "brand_color_slategrey",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#09aa7bc"
         },
         {
           "identifier": "text_color",
@@ -554,7 +575,7 @@
           "type": "color",
           "description": "background_color_description",
           "label": "background_color_label",
-          "value": "#FFFFFF"
+          "value": "#F2f5f8"
         }
       ]
     },
@@ -639,11 +660,11 @@
           "type": "list",
           "description": "text_font_description",
           "label": "text_font_label",
-          "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif",
+          "value": "'Poppins', sans-serif",
           "options": [
             {
               "label": "System",
-              "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+              "value": "'Poppins', sans-serif'"
             },
             {
               "label": "Arial",
