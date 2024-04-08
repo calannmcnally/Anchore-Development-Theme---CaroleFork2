@@ -4838,3 +4838,11 @@ body, button, input, select, textarea {
  font-family: 'Poppins', sans-serif;
 }
 
+/*hero_banner_image*/
+
+.hero_banner_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
