@@ -21,10 +21,11 @@
     display: inline;
   }
 
-  .text-description {
+  .card-text-description {
     position: relative;
     display: inline;
-    color:#0f131f
+    color:#9aa7bc
+    font: normal normal normal 22px/49px Poppins;
   }
   
   .card-link:hover .text-title::after {
