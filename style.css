@@ -21,7 +21,7 @@
     display: inline;
   }
 
-  .card-text-description {
+  .card-text-description.line-clamp-2 {
     position: relative;
     display: inline;
     color:#9aa7bc;
