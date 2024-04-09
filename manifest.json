@@ -578,7 +578,7 @@
           "value": "#f2f5f8"
         },
         {
-          "identifier": "background_color-grey",
+          "identifier": "background_color_grey",
           "type": "color",
           "description": "brand_color_description",
           "label": "brand_color_label",
