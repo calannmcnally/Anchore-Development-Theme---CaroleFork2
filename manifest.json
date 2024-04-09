@@ -1,7 +1,7 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "3.5.5",
+  "version": "3.5.6",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -55,7 +55,35 @@
           "label": "Homepage Video URL",
           "value": "Homepage Video URL"
         },
-        
+        {
+          "identifier": "cta_one",
+          "type": "text",
+          "description": "URL for the CTA",
+          "label": "CTA1 URL",
+          "value": "CTA1 URL"
+        },
+        {
+          "identifier": "cta_one_title",
+          "type": "text",
+          "description": "Title for CTA1",
+          "label": "CTA1 Title",
+          "value": "CTA1 Title"
+        },
+        {
+          "identifier": "cta_two_title",
+          "type": "text",
+          "description": "Title for CTA2",
+          "label": "CTA2 Title",
+          "value": "CTA2 Title"
+        },
+        {
+
+          "identifier": "cta_two",
+          "type": "text",
+          "description": "URL for the CTA",
+          "label": "CTA2 URL",
+          "value": "CTA2 URL"
+        },
          {
           "identifier": "category_card_icon_1",
           "type": "file",
@@ -622,6 +650,10 @@
               "value": "'Poppins', sans-serif"
             },
             {
+              "label": "Poppins",
+              "value": "'Poppins', sans-serif"
+            },
+            {
               "label": "Arial",
               "value": "Arial, 'Helvetica Neue', Helvetica, sans-serif"
             },
@@ -692,6 +724,10 @@
           "options": [
             {
               "label": "System",
+              "value": "'Poppins', sans-serif"
+            },
+            {
+              "label": "Poppins",
               "value": "'Poppins', sans-serif"
             },
             {
