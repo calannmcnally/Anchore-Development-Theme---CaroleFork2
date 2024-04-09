@@ -74,6 +74,9 @@
     text-overflow: ellipsis;
  
   }*/
+  .video-background{
+    background-color: #f2f5f8;
+  }
 
   /*custom colors*/
   .bg-custom-color{
