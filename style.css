@@ -146,7 +146,7 @@ h1,
 }
 
 h2,
- .anchore-hero-text {
+ .anchore-hero-description {
   box-sizing: border-box;
   color: $brand_text_color;
   font-family: 'Poppins', sans-serif;
