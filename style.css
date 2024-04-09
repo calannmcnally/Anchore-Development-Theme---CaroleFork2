@@ -1189,6 +1189,7 @@ ul {
   flex: 1 1 auto;
   height: 40px;
   width: 100%;
+  background-color: #f2f5f8;
 }
 .search input[type=search]:focus {
   color: #555;
@@ -1229,6 +1230,7 @@ button, select{
 [dir=ltr] .search input[type=search] {
   padding-left: 40px;
   padding-right: 20px;
+  background-color: #f2f5f8;
 }
 [dir=ltr] .search-has-value input[type=search] {
   border-bottom-right-radius: 0;
