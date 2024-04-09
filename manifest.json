@@ -1,7 +1,7 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -530,6 +530,13 @@
         },
         {
           "identifier": "brand_text_color",
+          "type": "color",
+          "description": "brand_text_color_description",
+          "label": "brand_text_color_label",
+          "value": "#f2f5f8"
+        },
+        {
+          "identifier": "brand_color_softwhite",
           "type": "color",
           "description": "brand_text_color_description",
           "label": "brand_text_color_label",
