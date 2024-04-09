@@ -582,7 +582,7 @@
           "type": "color",
           "description": "brand_color_description",
           "label": "brand_color_label",
-          "value": "#e9ebed;"
+          "value": "#e9ebed"
         },
         {
           "identifier": "brand_color_dmblue",
