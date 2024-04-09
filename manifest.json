@@ -1,7 +1,7 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "3.4.9",
+  "version": "3.5",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -533,7 +533,7 @@
           "type": "color",
           "description": "brand_text_color_description",
           "label": "brand_text_color_label",
-          "value": "#333742"
+          "value": "#f2f5f8"
         },
         {
           "identifier": "brand_color_dmblue",
@@ -547,35 +547,35 @@
           "type": "color",
           "description": "text_color_description",
           "label": "text_color_label",
-          "value": "#2F3941"
+          "value": "#f2f5f8"
         },
         {
           "identifier": "link_color",
           "type": "color",
           "description": "link_color_description",
           "label": "link_color_label",
-          "value": "#9AA7BC"
+          "value": "#82bcf9"
         },
         {
           "identifier": "hover_link_color",
           "type": "color",
           "description": "hover_link_color_description",
           "label": "hover_link_color_label",
-          "value": "#82BCF9"
+          "value": "#82bcf9"
         },
         {
           "identifier": "visited_link_color",
           "type": "color",
           "description": "visited_link_color_description",
           "label": "visited_link_color_label",
-          "value": "#333742"
+          "value": "#82bcf9"
         },
         {
           "identifier": "background_color",
           "type": "color",
           "description": "background_color_description",
           "label": "background_color_label",
-          "value": "#FFFFFF"
+          "value": "#f2f5f8"
         }
       ]
     },
