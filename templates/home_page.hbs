@@ -78,6 +78,39 @@
   background-color:{{settings.brand_color_softwhite}};
 }
 
+.video-box {
+  margin: 0 auto; /* Center the box */
+  padding: 20px; /* Padding around the video */
+  border: 2px solid {{settings.brand_color_slategrey}}; /* Desired border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  border-radius: 16px; /* Optional rounded corners */
+  box-sizing: border-box; /* Include padding and border in box's size */
+  background-color: {{settings.brand_color_softwhite}}; /* Optional: Set background color if needed */
+}
+
+
+/* Ensure the title is visible and styled appropriately */
+.text-2xl.font-semibold.text-center.mb-4 {
+  color: {{settings.brand_color}}; /* Adjust the color to ensure visibility */
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+   
+.section-background {
+  background: linear-gradient(to bottom, {{settings.brand_color_softwhite}} 50%, {{settings.brand_color_frostwhite}} 50%);
+  padding: 20px; /* Adjust the padding as needed */
+}
+
+
+/* Additional responsiveness */
+@media (max-width: 768px) {
+  .video-box {
+    width: 100%; /* Full width on smaller screens */
+    margin: 0 auto;
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+
  </style> 
 
 <div class="anchore-bg p-12">
@@ -107,16 +140,16 @@
 
 
 
-<div class="video-background">
-  <div class="container mx-auto px-4">
-    <div class="max-w-4xl mx-auto mb-6">
-      <h2 class="text-2xl font-semibold text-center mb-4">{{settings.homepage_video_title}}</h2>
-      <div class="relative overflow-hidden pb-56">
-        <iframe class="absolute top-0 left-0 w-full h-full" src="{{settings.homepage_video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
+<div class="section-background">
+  <div class="video-box">
+
+  <h2 class="text-2xl font-semibold text-center mb-4">{{settings.homepage_video_title}}</h2>
+  <div class="relative overflow-hidden pb-56 video-border">
+    <iframe class="absolute top-0 left-0 w-full h-full" src="{{settings.homepage_video_url}}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
+  </div>
+
 
 <!--NB card styling-->
 <section class="pb-5 sm:pb-10 bg-gray-200 bg-no-repeat bg-origin-padding">
