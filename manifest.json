@@ -1,7 +1,7 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "4.4.3",
+  "version": "4.4.4",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -83,6 +83,35 @@
           "description": "URL for the CTA",
           "label": "CTA2 URL",
           "value": "CTA2 URL"
+        },
+
+        {
+          "identifier": "header_one",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        },
+        {
+          "identifier": "header_one_title",
+          "type": "text",
+          "description": "Title for header link",
+          "label": "Header Title",
+          "value": "Requests"
+        },
+        {
+          "identifier": "header_two",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        },
+        {
+          "identifier": "header_two_title",
+          "type": "text",
+          "description": "Title for header link",
+          "label": "Header Title",
+          "value": "Submit a request"
         },
          {
           "identifier": "category_card_icon_1",
