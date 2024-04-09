@@ -782,7 +782,7 @@ const categoryData = [
   
     // Loop through the category cards and hide those beyond the 15th
     categoryCards.forEach((card, index) => {
-      if (index >= 15) {
+      if (index >= 12) {
         card.style.display = 'none';
       }
     });
