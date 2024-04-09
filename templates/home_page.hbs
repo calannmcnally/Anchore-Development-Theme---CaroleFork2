@@ -1,3 +1,37 @@
+<!--syling as cant call custom styling via css-->
+ <style>
+/*cta styling*/
+
+.btn-cta1{
+  background-color: {{settings.brand_color}};
+  color: {{settings.brand_text_color}};
+  border-radius:16px;
+  padding: 8px 16px;
+ }
+
+ .btn-cta1:hover{
+  background-color:{{settings.brand_color_dmblue}};
+  border-radius:16px;
+  padding: 8px 16px;
+ }
+
+  .btn-cta2{
+    background-color:{{settings.brand_color_softwhite}};
+    color:{{settings.brand_color}};
+    border-radius:16px;
+  padding: 8px 16px;
+  }
+
+  .btn-cta2:hover{
+    background-color:{{settings.brand_color}};
+    color:{{settings.brand_color_softwhite}};
+    border-radius:16px;
+  padding: 8px 16px;
+  }
+
+
+ </style> 
+
 <div class="anchore-bg p-12">
   <div class="container mx-auto flex flex-wrap items-center">
     <!-- Left Column -->
@@ -8,12 +42,7 @@
       <div class="max-w-md mx-auto lg:mx-0">
         {{search}}
       </div>
-       <!--syling as cant call custom styling via css-->
- <style>
-
-
-
- </style>  
+ 
       <div class="flex justify-center lg:justify-start space-x-4 mt-4">
         <a href="#" class="btn-cta1">CTA 1</a>
         <a href="#" class="btn-cta2">CTA 2</a>

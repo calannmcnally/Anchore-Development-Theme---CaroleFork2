@@ -1,31 +1,4 @@
-/*cta styling*/
 
-.btn-cta1{
-  background-color: {{settings.brand_color}};
-  color: {{settings.brand_text_color}};
-  border-radius:16px;
-  padding: 8px 16px;
- }
-
- .btn-cta1:hover{
-  background-color:{{settings.brand_color_dmblue}};
-  border-radius:16px;
-  padding: 8px 16px;
- }
-
-  .btn-cta2{
-    background-color:{{settings.brand_color_softwhite}};
-    color:{{settings.brand_color}};
-    border-radius:16px;
-  padding: 8px 16px;
-  }
-
-  .btn-cta2:hover{
-    background-color:{{settings.brand_color}};
-    color:{{settings.brand_color_softwhite}};
-    border-radius:16px;
-  padding: 8px 16px;
-  }
 /*categoryCards styling*/
 .card-link .text-title {
   position: relative;
