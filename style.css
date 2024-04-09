@@ -539,6 +539,13 @@ ul {
   padding: 0 1.9286em;
   width: 100%;
 }
+
+@media (max-width: 900px) {
+  .input[type=submit] {
+   display:none;
+  }
+ 
+}
 @media (min-width: 768px) {
   .button-large, input[type=submit] {
     width: auto;
@@ -2270,12 +2277,7 @@ button, select{
   }
 }
 
-@media (max-width: 900px) {
-  .input[type=submit] {
-   display:none;
-  }
- 
-}
+
 .comment-form-controls input[type=checkbox] {
   margin-right: 5px;
 }
