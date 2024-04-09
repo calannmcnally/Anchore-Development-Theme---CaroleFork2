@@ -48,6 +48,13 @@
           "label": "Homepage Video Title",
           "value": "Homepage Video Title"
         },
+        {
+          "identifier": "homepage_video_url",
+          "type": "text",
+          "description": "Description for the homepage video",
+          "label": "Homepage Video Description",
+          "value": "Homepage Video Description"
+        },
         
          {
           "identifier": "category_card_icon_1",
