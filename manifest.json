@@ -578,11 +578,11 @@
           "value": "#f2f5f8"
         },
         {
-          "identifier": "brand_color_frostwhite",
+          "identifier": "background_color-grey",
           "type": "color",
           "description": "brand_color_description",
           "label": "brand_color_label",
-          "value": "rgba(18, 52, 86, 0.75);"
+          "value": "#e9ebed;"
         },
         {
           "identifier": "brand_color_dmblue",
