@@ -529,6 +529,13 @@
           "value": "#0f131f"
         },
         {
+          "identifier": "brand_color_dmblack",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#20242e"
+        },
+        {
           "identifier": "brand_text_color",
           "type": "color",
           "description": "brand_text_color_description",
@@ -548,6 +555,20 @@
           "description": "brand_color_description",
           "label": "brand_color_label",
           "value": "#3e66cd"
+        },
+        {
+          "identifier": "brand_color_slategrey",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#9aa7bc"
+        },
+        {
+          "identifier": "brand_color_darkgrey",
+          "type": "color",
+          "description": "brand_color_description",
+          "label": "brand_color_label",
+          "value": "#333742"
         },
         {
           "identifier": "text_color",
