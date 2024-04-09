@@ -51,9 +51,9 @@
         {
           "identifier": "homepage_video_url",
           "type": "text",
-          "description": "Description for the homepage video",
-          "label": "Homepage Video Description",
-          "value": "Homepage Video Description"
+          "description": "URL for the homepage video",
+          "label": "Homepage Video URL",
+          "value": "Homepage Video URL"
         },
         
          {
