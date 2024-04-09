@@ -20,6 +20,12 @@
     position: relative;
     display: inline;
   }
+
+  .card-link .text-description {
+    position: relative;
+    display: inline;
+    color:#0f131f
+  }
   
   .card-link:hover .text-title::after {
     content: '';
@@ -59,10 +65,10 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    color:#9aa7bc;
-    font-family: 'Poppins', sans-serif;
-    font-size: small;
+ 
   }
+
+  .
   
   /*custom colors*/
   .bg-custom-color{
