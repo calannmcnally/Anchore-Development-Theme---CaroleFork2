@@ -59,6 +59,9 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    color:#9aa7bc;
+    font-family: 'Poppins', sans-serif;
+    font-size: medium;
   }
   
   /*custom colors*/
