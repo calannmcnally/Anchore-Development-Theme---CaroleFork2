@@ -11,23 +11,35 @@
     margin: auto;
     border-radius: 50%;
     opacity: 0.6;
-    background: {{settings.brand_color}};
+    background: {{settings.brand_color_softwhite}};
     filter: blur(100px);
     left: unset !important;
     transform: unset !important;
 	}
 
   .grid_bg {
-    background: {{settings.brand_color}};
-    color: {{settings.brand_color_softwhite}};
+    background: {{settings.brand_softwhite}};
+    color: {{settings.brand_color}};
+    border: solid 1px {{settings.brand_color_slategrey}};
+  }
+
+  .grid_bg:hover {
+    background: {{settings.brand_softwhite}};
+    color: {{settings.brand_color}};
     border: solid 1px {{settings.brand_color_slategrey}};
   }
 </style>
 
+<section class="anchore-bg p-12">
+  <div class="container mx-auto flex flex-wrap items-center">
+  
+    <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
+    <h1 class="mb-4 anchore-hero-title">Articles</h1>
+    <div class="max-w-md mx-auto lg:mx-0">
+        {{search}}
+      </div>
 
-  </div>
-  <div class="absolute anchore-bg" style="top: 160px;"></div>
-</section>
+    </section>
 
 
 <section class="pb-20 mb-10">
