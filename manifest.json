@@ -719,6 +719,196 @@
       ]
     },
     {
+      "label": "Anchore - Section",
+      "variables": [
+        {
+          "identifier": "section_card_icon_1",
+          "type": "file",
+          "description": "Icon for the first section card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_1_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_2",
+          "type": "file",
+          "description": "Icon for the second section card",
+          "label": "Card_Icon_2"
+        },
+        {
+          "identifier": "section_card_icon_2_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_3",
+          "type": "file",
+          "description": "Icon for the third section card",
+          "label": "Card_Icon_3"
+        },
+        {
+          "identifier": "section_card_icon_3_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_4",
+          "type": "file",
+          "description": "Icon for the forth section card",
+          "label": "Card_Icon_4"
+        },
+        {
+          "identifier": "section_card_icon_4_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_5",
+          "type": "file",
+          "description": "Icon for the fifth section card",
+          "label": "Card_Icon_5"
+        },
+        {
+          "identifier": "section_card_icon_5_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_6",
+          "type": "file",
+          "description": "Icon for the sixth section card",
+          "label": "Card_Icon_6"
+        },
+        {
+          "identifier": "section_card_icon_6_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_7",
+          "type": "file",
+          "description": "Icon for the seventh section card",
+          "label": "Card_Icon_7"
+        },
+        {
+          "identifier": "section_card_icon_7_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_8",
+          "type": "file",
+          "description": "Icon for the eighth section card",
+          "label": "Card_Icon_8"
+        },
+        {
+          "identifier": "section_card_icon_8_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_9",
+          "type": "file",
+          "description": "Icon for the nineth section card",
+          "label": "Card_Icon_9"
+        },
+        {
+          "identifier": "section_card_icon_9_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_10",
+          "type": "file",
+          "description": "Icon for the tenth section card",
+          "label": "Card_Icon_10"
+        },
+        {
+          "identifier": "section_card_icon_10_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_11",
+          "type": "file",
+          "description": "Icon for the eleventh section card",
+          "label": "Card_Icon_11"
+        },
+        {
+          "identifier": "section_card_icon_11_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "section_card_icon_12",
+          "type": "file",
+          "description": "Icon for the twelfth section card",
+          "label": "Card_Icon_12"
+        },
+        {
+          "identifier": "section_card_icon_12_active",
+          "type": "file",
+          "description": "Icon for the active card",
+          "label": "Card_Icon_1"
+        }
+      ]
+    },
+    {
+      "label": "Anchore - SubSection",
+      "variables": [
+        {
+          "identifier": "subsection_card_icon_1",
+          "type": "file",
+          "description": "Icon for the first subsection card",
+          "label": "Card_Icon_1"
+        },
+        {
+          "identifier": "subsection_card_icon_2",
+          "type": "file",
+          "description": "Icon for the second subsection card",
+          "label": "Card_Icon_2"
+        },
+        {
+          "identifier": "subsection_card_icon_3",
+          "type": "file",
+          "description": "Icon for the third subsection card",
+          "label": "Card_Icon_3"
+        },
+        {
+          "identifier": "subsection_card_icon_4",
+          "type": "file",
+          "description": "Icon for the forth subsection card",
+          "label": "Card_Icon_4"
+        },
+        {
+          "identifier": "subsection_card_icon_5",
+          "type": "file",
+          "description": "Icon for the fifth subsection card",
+          "label": "Card_Icon_5"
+        },
+        {
+          "identifier": "subsection_card_icon_6",
+          "type": "file",
+          "description": "Icon for the sixth subsection card",
+          "label": "Card_Icon_6"
+        }
+      ]
+    },
+    {
       "label": "colors_group_label",
       "variables": [
         {
