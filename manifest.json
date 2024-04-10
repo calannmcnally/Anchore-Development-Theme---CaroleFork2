@@ -1,10 +1,172 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "4.5.6",
+  "version": "4.5.7",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
+    
+    {
+      "label": "Search bar",
+      "variables": [
+        {
+          "identifier": "header_search",
+          "type": "file",
+          "description": "Icon for header search bar.",
+          "label": "header_search"
+        },
+        {
+          "identifier": "search_icon",
+          "type": "file",
+          "description": "Icon for search bar",
+          "label": "search_icon"
+        }
+      ]
+    },
+    {
+      "label": "Hero Banner",
+      "variables": [
+        {
+          "identifier": "hero_banner_text",
+          "type": "text",
+          "description": "Text for the homepage hero banner",
+          "label": "Hero Banner Text",
+          "value": "How can we help?"
+        },
+        {
+          "identifier": "hero_banner_description",
+          "type": "text",
+          "description": "Description for the homepage hero banner",
+          "label": "Hero Banner Description",
+          "value": "Description for the homepage hero banner"
+        },
+
+        {
+          "identifier": "hero_banner_image",
+          "type": "file",
+          "description": "Image for the homepage hero banner",
+          "label": "Hero banner Image"
+        },
+        {
+          "identifier": "homepage_video_title",
+          "type": "text",
+          "description": "Title for the homepage video",
+          "label": "Homepage Video Title",
+          "value": "Homepage Video Title"
+        },
+        {
+          "identifier": "homepage_video_url",
+          "type": "text",
+          "description": "URL for the homepage video",
+          "label": "Homepage Video URL",
+          "value": "Homepage Video URL"
+        },
+        {
+          "identifier": "cta_one_title",
+          "type": "text",
+          "description": "Title for CTA1",
+          "label": "CTA1 Title",
+          "value": "CTA1 Title"
+        },
+        {
+          "identifier": "cta_one",
+          "type": "text",
+          "description": "URL for the CTA",
+          "label": "CTA1 URL",
+          "value": "CTA1 URL"
+        },
+        {
+          "identifier": "cta_two_title",
+          "type": "text",
+          "description": "Title for CTA2",
+          "label": "CTA2 Title",
+          "value": "CTA2 Title"
+        },
+        {
+
+          "identifier": "cta_two",
+          "type": "text",
+          "description": "URL for the CTA",
+          "label": "CTA2 URL",
+          "value": "CTA2 URL"
+        },
+
+        {
+          "identifier": "header_one_title",
+          "type": "text",
+          "description": "Title for header link",
+          "label": "Header Title",
+          "value": "Requests"
+        },
+        {
+          "identifier": "header_one",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        },
+
+        {
+          "identifier": "header_two_title",
+          "type": "text",
+          "description": "Title for header link",
+          "label": "Header Title",
+          "value": "Submit a request"
+        },
+        {
+          "identifier": "header_two",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        },
+        
+        {
+          "identifier": "header_three_title",
+          "type": "text",
+          "description": "Title for header link",
+          "label": "Header Title",
+          "value": "Submit a request"
+        },
+        {
+          "identifier": "header_three",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        },
+        
+        {
+          "identifier": "header_four_title",
+          "type": "text",
+          "description": "Title for header link",
+          "label": "Header Title",
+          "value": "Submit a request"
+        },
+        {
+          "identifier": "header_four",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        },
+        
+        {
+          "identifier": "header_five_title",
+          "type": "text",
+          "description": "Title for header link",
+          "label": "Header Title",
+          "value": "Submit a request"
+        },
+        {
+          "identifier": "header_five",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        }
+      ]
+    },
     {
       "label": "Custom Tiles",
       "variables": [
@@ -331,122 +493,6 @@
           "description": "URL for the twelfth tile",
           "label": "Tile 12 URL",
           "value": "https://www.zendesk.com"
-        }
-      ]
-    },
-    {
-      "label": "Search bar",
-      "variables": [
-        {
-          "identifier": "header_search",
-          "type": "file",
-          "description": "Icon for header search bar.",
-          "label": "header_search"
-        },
-        {
-          "identifier": "search_icon",
-          "type": "file",
-          "description": "Icon for search bar",
-          "label": "search_icon"
-        }
-      ]
-    },
-    {
-      "label": "Hero Banner",
-      "variables": [
-        {
-          "identifier": "hero_banner_text",
-          "type": "text",
-          "description": "Text for the homepage hero banner",
-          "label": "Hero Banner Text",
-          "value": "How can we help?"
-        },
-        {
-          "identifier": "hero_banner_description",
-          "type": "text",
-          "description": "Description for the homepage hero banner",
-          "label": "Hero Banner Description",
-          "value": "Description for the homepage hero banner"
-        },
-
-        {
-          "identifier": "hero_banner_image",
-          "type": "file",
-          "description": "Image for the homepage hero banner",
-          "label": "Hero banner Image"
-        },
-        {
-          "identifier": "homepage_video_title",
-          "type": "text",
-          "description": "Title for the homepage video",
-          "label": "Homepage Video Title",
-          "value": "Homepage Video Title"
-        },
-        {
-          "identifier": "homepage_video_url",
-          "type": "text",
-          "description": "URL for the homepage video",
-          "label": "Homepage Video URL",
-          "value": "Homepage Video URL"
-        },
-        {
-          "identifier": "cta_one",
-          "type": "text",
-          "description": "URL for the CTA",
-          "label": "CTA1 URL",
-          "value": "CTA1 URL"
-        },
-        {
-          "identifier": "cta_one_title",
-          "type": "text",
-          "description": "Title for CTA1",
-          "label": "CTA1 Title",
-          "value": "CTA1 Title"
-        },
-        {
-          "identifier": "cta_two_title",
-          "type": "text",
-          "description": "Title for CTA2",
-          "label": "CTA2 Title",
-          "value": "CTA2 Title"
-        },
-        {
-
-          "identifier": "cta_two",
-          "type": "text",
-          "description": "URL for the CTA",
-          "label": "CTA2 URL",
-          "value": "CTA2 URL"
-        },
-
-        {
-          "identifier": "header_one_title",
-          "type": "text",
-          "description": "Title for header link",
-          "label": "Header Title",
-          "value": "Requests"
-        },
-        {
-          "identifier": "header_one",
-          "type": "text",
-          "description": "URL for the header link",
-          "label": "HEADER URL",
-          "value": "#"
-        },
-
-        {
-          "identifier": "header_two_title",
-          "type": "text",
-          "description": "Title for header link",
-          "label": "Header Title",
-          "value": "Submit a request"
-        },
-        {
-          "identifier": "header_two",
-          "type": "text",
-          "description": "URL for the header link",
-          "label": "HEADER URL",
-          "value": "#"
         }
       ]
     },
