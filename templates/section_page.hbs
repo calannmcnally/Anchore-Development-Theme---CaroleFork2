@@ -9,7 +9,7 @@
   }
 
   .article-section:hover {
-  background-color:{{settings.brand_color_softwhite}};
+  background-color:{{settings.brand_color_black}};
 }
 </style>
 <section class="anchore-bg p-12">
@@ -51,10 +51,7 @@
       {{/each}}
   {{/if}}
   {{#if section.articles}}
-  <section class="pb-5 sm:pb-10 bg-no-repeat bg-origin-padding bg-brand-grey">
-  <div class="container mx-auto text-center category-cards py-4 px-3 sm:py-10">
-    <h2 class="text-2xl font-semibold text-center mb-4">Articles</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-8 px-5">
+  
    <section id="{{section.id}}" class="article-section transform transition duration-300 ease-in-out shadow-sm hover:bg-white hover:scale-105 hover:shadow-lg hover:border-transparent hover:shadow-outline rounded-lg">
      <h2 class="section-subtitle">{{section.name}}</h2>
       <ul class="list-disc pl-8 mt-7" section={{section.id}}>
