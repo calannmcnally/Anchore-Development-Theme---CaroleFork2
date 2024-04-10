@@ -1,4 +1,9 @@
-
+<style>
+  .bg-section {
+    background-color: {{brand_color_softwhite}};
+    border-radius:16px;
+  }
+</style>
 <section class="anchore-bg p-12">
   <div class="container mx-auto flex flex-wrap items-center">
     <!-- Left Column -->
@@ -21,7 +26,7 @@
       </div>
   {{#if section.sections}}
       {{#each section.sections}}
-        <section id="{{this.id}}" class="pt-4 pb-14 mb-12 bg-white border-b">
+        <section id="{{this.id}}" class="pt-4 pb-14 mb-12 bg-section">
           <h2 class="section-subtitle">{{this.name}}</h2>
           <ul class="list-none pl-0 mt-7 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-4" subsection={{this.id}}>
             {{!-- Iterate through articles in this section --}}
