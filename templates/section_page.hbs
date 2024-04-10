@@ -1,72 +1,63 @@
-<div class="container-divider"></div>
-<div class="container">
-  <nav class="sub-nav">
-    {{breadcrumbs}}
-    <div class="search-container">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" focusable="false" viewBox="0 0 12 12" class="search-icon" aria-hidden="true">
-        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
-        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
-      </svg>
-      {{search scoped=settings.scoped_kb_search submit=false}}
+
+<div class="anchore-bg p-12">
+  <div class="container mx-auto flex flex-wrap items-center">
+    <!-- Left Column -->
+    <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
+    <h1 class="mb-4 anchore-hero-header">{{settings.hero_banner_text}}</h1>
+     <!-- <h1 class=" text-3xl mb-4">Hero Text Here</h1>-->
+      <div class="anchore-hero-description">{{settings.hero_banner_description}}</div>
+      <div class="max-w-md mx-auto lg:mx-0">
+        {{search}}
+      </div>
+ 
+      <div class="flex justify-center lg:justify-start space-x-4 mt-4">
+        {{#if settings.cta_one_title}}
+        <a href="{{settings.cta_one}}" class="btn-cta1">{{settings.cta_one_title}}</a>
+        {{/if}}
+        {{#if settings.cta_two_title}}
+        <a href="{{settings.cta_two}}" class="btn-cta2">{{settings.cta_two_title}}</a>
+        {{/if}}
+      </div>
     </div>
-  </nav>
 
-  <div class="section-container">
-    <section id="main-content" class="section-content">
-      <header class="page-header">
-        <h1>{{section.name}}</h1>
-        {{#if settings.show_follow_section}}
-          <div class="section-subscribe">{{subscribe}}</div>
-        {{/if}}
-        {{#if section.description}}
-          <p class="page-header-description">{{section.description}}</p>
-        {{/if}}
-      </header>
+<div id="horizontal-menu" class="hidden md:block container mx-auto py-0 px-6"></div>
 
-      {{#if section.sections}}
-        <ul class="section-list">
-          {{#each section.sections}}
-          <li class="section-list-item">
-              <a href="{{url}}">
-                <span>{{name}}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" aria-hidden="true">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 14.5l6.1-6.1c.2-.2.2-.5 0-.7L5 1.5"/>
-                </svg>
-              </a>
-            </li>
-          {{/each}}
-        </ul>
-      {{/if}}
-
-      {{pagination "section.sections"}}
-
-      {{#if section.articles}}
-        <ul class="article-list">
-          {{#each section.articles}}
-            <li class="article-list-item {{#if promoted}} article-promoted{{/if}}">
-              {{#if promoted}}
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" class="icon-star" title="{{t 'promoted'}}">
-                  <path fill="currentColor" d="M2.88 11.73c-.19 0-.39-.06-.55-.18a.938.938 0 01-.37-1.01l.8-3L.35 5.57a.938.938 0 01-.3-1.03c.12-.37.45-.63.85-.65L4 3.73 5.12.83c.14-.37.49-.61.88-.61s.74.24.88.6L8 3.73l3.11.17a.946.946 0 01.55 1.68L9.24 7.53l.8 3a.95.95 0 01-1.43 1.04L6 9.88l-2.61 1.69c-.16.1-.34.16-.51.16z"/>
-                </svg>
-              {{/if}}
-              <a href="{{url}}" class="article-list-link">{{title}}</a>
-              {{#if internal}}
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 16 16" class="icon-lock" title="{{t 'internal'}}">
-                  <rect width="12" height="9" x="2" y="7" fill="currentColor" rx="1" ry="1"/>
-                  <path fill="none" stroke="currentColor" d="M4.5 7.5V4a3.5 3.5 0 017 0v3.5"/>
-                </svg>
-              {{/if}}
-            </li>
-          {{/each}}
-        </ul>
-      {{else}}
-        <i class="section-empty">
-          <a href="{{section.url}}">{{t 'empty'}}</a>
-        </i>
-      {{/if}}
-
-      {{pagination "section.articles"}}
-
-    </section>
-  </div>
+<div class="container mx-auto py-4 md:py-0 px-6">
+  <div class="py-8">
+        {{breadcrumbs}}
+      </div>
+  {{#if section.sections}}
+      {{#each section.sections}}
+        <section id="{{this.id}}" class="pt-4 pb-14 mb-12 bg-white border-b">
+          <h2 class="section-subtitle">{{this.name}}</h2>
+          <ul class="list-none pl-0 mt-7 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-4" subsection={{this.id}}>
+            {{!-- Iterate through articles in this section --}}
+            {{#each this.articles}}
+              <li>
+                <a href="{{url}}" class="section-item-bullet flex gap-6">
+                		<span class="flex align-center">•</span>
+                    <span class="flex">{{this.title}}</span>
+                </a>
+              </li>
+            {{/each}}
+          </ul>
+        </section>
+      {{/each}}
+  {{/if}}
+  {{#if section.articles}}
+   <section id="{{section.id}}" class="pt-4 pb-12 mb-12 bg-white">
+     <h2 class="section-subtitle">{{section.name}}</h2>
+      <ul class="list-disc pl-8 mt-7" section={{section.id}}>
+        {{!-- Iterate through articles in this section --}}
+        {{#each section.articles}}
+          <li>
+                <a href="{{url}}" class="section-item-bullet">
+                {{this.title}}
+                </a>
+              </li>
+        {{/each}}
+     </ul>
+  </section>
+  {{/if}}
+  				
 </div>
