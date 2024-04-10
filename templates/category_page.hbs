@@ -42,14 +42,12 @@
           </a>
           <ul class="article-list">
             {{#each articles}}
-              {{#if @index < 6}}
+              
                 <li><a href="{{this.url}}">{{this.title}}</a></li>
-              {{/if}}
+              
             {{/each}}
           </ul>
-          {{#if articles.length > 6}}
-            <a href="{{url}}" class="see-more">See more...</a>
-          {{/if}}
+        
         </div>
       {{/each}}
     </div>
