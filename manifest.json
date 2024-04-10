@@ -1,12 +1,341 @@
 {
   "name": "Anchore Development Theme - Carole",
   "author": "Zendesk",
-  "version": "4.5.5",
+  "version": "4.5.6",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
     {
-      "label": "Anchore",
+      "label": "Custom Tiles",
+      "variables": [
+        {
+          "identifier": "tile_1",
+          "type": "file",
+          "description": "Icon for the first tile",
+          "label": "Tile 1"
+        },
+        {
+          "identifier": "tile_1_title",
+          "type": "text",
+          "description": "Title for the first tile",
+          "label": "Tile 1 Title",
+          "value": "Tile 1"
+        },
+        {
+          "identifier": "tile_1_description",
+          "type": "text",
+          "description": "Description for the first tile",
+          "label": "Tile 1 Description",
+          "value": "Description for the first tile"
+        },
+        {
+          "identifier": "tile_1_url",
+          "type": "text",
+          "description": "URL for the first tile",
+          "label": "Tile 1 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_2",
+          "type": "file",
+          "description": "Icon for the second tile",
+          "label": "Tile 2"
+        },
+        {
+          "identifier": "tile_2_title",
+          "type": "text",
+          "description": "Title for the second tile",
+          "label": "Tile 2 Title",
+          "value": "Tile 2"
+        },
+        {
+          "identifier": "tile_2_description",
+          "type": "text",
+          "description": "Description for the second tile",
+          "label": "Tile 2 Description",
+          "value": "Description for the second tile"
+        },
+        {
+          "identifier": "tile_2_url",
+          "type": "text",
+          "description": "URL for the second tile",
+          "label": "Tile 2 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_3",
+          "type": "file",
+          "description": "Icon for the third tile",
+          "label": "Tile 3"
+        },
+        {
+          "identifier": "tile_3_title",
+          "type": "text",
+          "description": "Title for the third tile",
+          "label": "Tile 3 Title",
+          "value": "Tile 3"
+        },
+        {
+          "identifier": "tile_3_description",
+          "type": "text",
+          "description": "Description for the third tile",
+          "label": "Tile 3 Description",
+          "value": "Description for the third tile"
+        },
+        {
+          "identifier": "tile_3_url",
+          "type": "text",
+          "description": "URL for the third tile",
+          "label": "Tile 3 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_4",
+          "type": "file",
+          "description": "Icon for the fourth tile",
+          "label": "Tile 4"
+        },
+        {
+          "identifier": "tile_4_title",
+          "type": "text",
+          "description": "Title for the fourth tile",
+          "label": "Tile 4 Title",
+          "value": "Tile 4"
+        },
+        {
+          "identifier": "tile_4_description",
+          "type": "text",
+          "description": "Description for the fourth tile",
+          "label": "Tile 4 Description",
+          "value": "Description for the fourth tile"
+        },
+        {
+          "identifier": "tile_4_url",
+          "type": "text",
+          "description": "URL for the fourth tile",
+          "label": "Tile 4 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_5",
+          "type": "file",
+          "description": "Icon for the fifth tile",
+          "label": "Tile 5"
+        },
+        {
+          "identifier": "tile_5_title",
+          "type": "text",
+          "description": "Title for the fifth tile",
+          "label": "Tile 5 Title",
+          "value": "Tile 5"
+        },
+        {
+          "identifier": "tile_5_description",
+          "type": "text",
+          "description": "Description for the fifth tile",
+          "label": "Tile 5 Description",
+          "value": "Description for the fifth tile"
+        },
+        {
+          "identifier": "tile_5_url",
+          "type": "text",
+          "description": "URL for the fifth tile",
+          "label": "Tile 5 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_6",
+          "type": "file",
+          "description": "Icon for the sixth tile",
+          "label": "Tile 6"
+        },
+        {
+          "identifier": "tile_6_title",
+          "type": "text",
+          "description": "Title for the sixth tile",
+          "label": "Tile 6 Title",
+          "value": "Tile 6"
+        },
+        {
+          "identifier": "tile_6_description",
+          "type": "text",
+          "description": "Description for the sixth tile",
+          "label": "Tile 6 Description",
+          "value": "Description for the sixth tile"
+        },
+        {
+          "identifier": "tile_6_url",
+          "type": "text",
+          "description": "URL for the sixth tile",
+          "label": "Tile 6 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_7",
+          "type": "file",
+          "description": "Icon for the seventh tile",
+          "label": "Tile 7"
+        },
+        {
+          "identifier": "tile_7_title",
+          "type": "text",
+          "description": "Title for the seventh tile",
+          "label": "Tile 7 Title",
+          "value": ""
+        },
+        {
+          "identifier": "tile_7_description",
+          "type": "text",
+          "description": "Description for the seventh tile",
+          "label": "Tile 7 Description",
+          "value": "Description for the seventh tile"
+        },
+        {
+          "identifier": "tile_7_url",
+          "type": "text",
+          "description": "URL for the seventh tile",
+          "label": "Tile 7 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_8",
+          "type": "file",
+          "description": "Icon for the eighth tile",
+          "label": "Tile 8"
+        },
+        {
+          "identifier": "tile_8_title",
+          "type": "text",
+          "description": "Title for the eighth tile",
+          "label": "Tile 8 Title",
+          "value": ""
+        },
+        {
+          "identifier": "tile_8_description",
+          "type": "text",
+          "description": "Description for the eighth tile",
+          "label": "Tile 8 Description",
+          "value": "Description for the eighth tile"
+        },
+        {
+          "identifier": "tile_8_url",
+          "type": "text",
+          "description": "URL for the eighth tile",
+          "label": "Tile 8 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_9",
+          "type": "file",
+          "description": "Icon for the ninth tile",
+          "label": "Tile 9"
+        },
+        {
+          "identifier": "tile_9_title",
+          "type": "text",
+          "description": "Title for the ninth tile",
+          "label": "Tile 9 Title",
+          "value": ""
+        },
+        {
+          "identifier": "tile_9_description",
+          "type": "text",
+          "description": "Description for the ninth tile",
+          "label": "Tile 9 Description",
+          "value": "Description for the ninth tile"
+        },
+        {
+          "identifier": "tile_9_url",
+          "type": "text",
+          "description": "URL for the ninth tile",
+          "label": "Tile 9 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_10",
+          "type": "file",
+          "description": "Icon for the tenth tile",
+          "label": "Tile 10"
+        },
+        {
+          "identifier": "tile_10_title",
+          "type": "text",
+          "description": "Title for the tenth tile",
+          "label": "Tile 10 Title",
+          "value": ""
+        },
+        {
+          "identifier": "tile_10_description",
+          "type": "text",
+          "description": "Description for the tenth tile",
+          "label": "Tile 10 Description",
+          "value": "Description for the tenth tile"
+        },
+        {
+          "identifier": "tile_10_url",
+          "type": "text",
+          "description": "URL for the tenth tile",
+          "label": "Tile 10 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_11",
+          "type": "file",
+          "description": "Icon for the eleventh tile",
+          "label": "Tile 11"
+        },
+        {
+          "identifier": "tile_11_title",
+          "type": "text",
+          "description": "Title for the eleventh tile",
+          "label": "Tile 11 Title",
+          "value": ""
+        },
+        {
+          "identifier": "tile_11_description",
+          "type": "text",
+          "description": "Description for the eleventh tile",
+          "label": "Tile 11 Description",
+          "value": "Description for the eleventh tile"
+        },
+        {
+          "identifier": "tile_11_url",
+          "type": "text",
+          "description": "URL for the eleventh tile",
+          "label": "Tile 11 URL",
+          "value": "https://www.zendesk.com"
+        },
+        {
+          "identifier": "tile_12",
+          "type": "file",
+          "description": "Icon for the twelfth tile",
+          "label": "Tile 12"
+        },
+        {
+          "identifier": "tile_12_title",
+          "type": "text",
+          "description": "Title for the twelfth tile",
+          "label": "Tile 12 Title",
+          "value": ""
+        },
+        {
+          "identifier": "tile_12_description",
+          "type": "text",
+          "description": "Description for the twelfth tile",
+          "label": "Tile 12 Description",
+          "value": "Description for the twelfth tile"
+        },
+        {
+          "identifier": "tile_12_url",
+          "type": "text",
+          "description": "URL for the twelfth tile",
+          "label": "Tile 12 URL",
+          "value": "https://www.zendesk.com"
+        }
+      ]
+    },
+    {
+      "label": "Search bar",
       "variables": [
         {
           "identifier": "header_search",
@@ -20,6 +349,11 @@
           "description": "Icon for search bar",
           "label": "search_icon"
         },
+      ]
+    },
+    {
+      "label": "Hero Banner",
+      "variables": [
         {
           "identifier": "hero_banner_text",
           "type": "text",
@@ -86,13 +420,6 @@
         },
 
         {
-          "identifier": "header_one",
-          "type": "text",
-          "description": "URL for the header link",
-          "label": "HEADER URL",
-          "value": "#"
-        },
-        {
           "identifier": "header_one_title",
           "type": "text",
           "description": "Title for header link",
@@ -100,12 +427,13 @@
           "value": "Requests"
         },
         {
-          "identifier": "header_two",
+          "identifier": "header_one",
           "type": "text",
           "description": "URL for the header link",
           "label": "HEADER URL",
           "value": "#"
         },
+
         {
           "identifier": "header_two_title",
           "type": "text",
@@ -113,6 +441,18 @@
           "label": "Header Title",
           "value": "Submit a request"
         },
+        {
+          "identifier": "header_two",
+          "type": "text",
+          "description": "URL for the header link",
+          "label": "HEADER URL",
+          "value": "#"
+        }
+      ]
+    },
+      {
+        "label": "Category Cards",
+        "variables": [
          {
           "identifier": "category_card_icon_1",
           "type": "file",
@@ -375,196 +715,6 @@
           "type": "file",
           "description": "Icon for popular articles",
           "label": "popular_articles_icon"
-        }
-      ]
-    },
-    {
-      "label": "Anchore - Section",
-      "variables": [
-        {
-          "identifier": "section_card_icon_1",
-          "type": "file",
-          "description": "Icon for the first section card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_1_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_2",
-          "type": "file",
-          "description": "Icon for the second section card",
-          "label": "Card_Icon_2"
-        },
-        {
-          "identifier": "section_card_icon_2_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_3",
-          "type": "file",
-          "description": "Icon for the third section card",
-          "label": "Card_Icon_3"
-        },
-        {
-          "identifier": "section_card_icon_3_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_4",
-          "type": "file",
-          "description": "Icon for the forth section card",
-          "label": "Card_Icon_4"
-        },
-        {
-          "identifier": "section_card_icon_4_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_5",
-          "type": "file",
-          "description": "Icon for the fifth section card",
-          "label": "Card_Icon_5"
-        },
-        {
-          "identifier": "section_card_icon_5_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_6",
-          "type": "file",
-          "description": "Icon for the sixth section card",
-          "label": "Card_Icon_6"
-        },
-        {
-          "identifier": "section_card_icon_6_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_7",
-          "type": "file",
-          "description": "Icon for the seventh section card",
-          "label": "Card_Icon_7"
-        },
-        {
-          "identifier": "section_card_icon_7_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_8",
-          "type": "file",
-          "description": "Icon for the eighth section card",
-          "label": "Card_Icon_8"
-        },
-        {
-          "identifier": "section_card_icon_8_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_9",
-          "type": "file",
-          "description": "Icon for the nineth section card",
-          "label": "Card_Icon_9"
-        },
-        {
-          "identifier": "section_card_icon_9_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_10",
-          "type": "file",
-          "description": "Icon for the tenth section card",
-          "label": "Card_Icon_10"
-        },
-        {
-          "identifier": "section_card_icon_10_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_11",
-          "type": "file",
-          "description": "Icon for the eleventh section card",
-          "label": "Card_Icon_11"
-        },
-        {
-          "identifier": "section_card_icon_11_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "section_card_icon_12",
-          "type": "file",
-          "description": "Icon for the twelfth section card",
-          "label": "Card_Icon_12"
-        },
-        {
-          "identifier": "section_card_icon_12_active",
-          "type": "file",
-          "description": "Icon for the active card",
-          "label": "Card_Icon_1"
-        }
-      ]
-    },
-    {
-      "label": "Anchore - SubSection",
-      "variables": [
-        {
-          "identifier": "subsection_card_icon_1",
-          "type": "file",
-          "description": "Icon for the first subsection card",
-          "label": "Card_Icon_1"
-        },
-        {
-          "identifier": "subsection_card_icon_2",
-          "type": "file",
-          "description": "Icon for the second subsection card",
-          "label": "Card_Icon_2"
-        },
-        {
-          "identifier": "subsection_card_icon_3",
-          "type": "file",
-          "description": "Icon for the third subsection card",
-          "label": "Card_Icon_3"
-        },
-        {
-          "identifier": "subsection_card_icon_4",
-          "type": "file",
-          "description": "Icon for the forth subsection card",
-          "label": "Card_Icon_4"
-        },
-        {
-          "identifier": "subsection_card_icon_5",
-          "type": "file",
-          "description": "Icon for the fifth subsection card",
-          "label": "Card_Icon_5"
-        },
-        {
-          "identifier": "subsection_card_icon_6",
-          "type": "file",
-          "description": "Icon for the sixth subsection card",
-          "label": "Card_Icon_6"
         }
       ]
     },
