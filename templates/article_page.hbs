@@ -1,4 +1,22 @@
-<div class="container-divider"></div>
+<style>
+  .article-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+</style>
+
+<section class="anchore-bg p-12">
+  <div class="container mx-auto flex flex-wrap items-center">
+    <!-- Left Column -->
+    <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
+    <h1 class="mb-4 anchore-hero-header">{{article.title}}</h1>
+    <div class="max-w-md mx-auto lg:mx-0">
+        {{search}}
+      </div>
+
+    </section>
+ <div class="container-divider"></div>
 <div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
