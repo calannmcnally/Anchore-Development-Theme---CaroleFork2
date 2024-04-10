@@ -10,6 +10,7 @@
     background: {{settings.brand_color_softwhite}};
     color: {{settings.brand_color}};
     border: solid 1px {{settings.brand_color_slategrey}};
+    border-radius: 22px;
   }
 
   .grid_bg:hover {
@@ -23,7 +24,7 @@
   <div class="container mx-auto flex flex-wrap items-center">
   
     <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
-    <h1 class="mb-4 anchore-hero-title">Articles</h1>
+    <h1 class="mb-4 anchore-hero-title">Categories</h1>
     <div class="max-w-md mx-auto lg:mx-0">
         {{search}}
       </div>
@@ -38,7 +39,7 @@
       </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {{#each sections}}
-        <a href="{{url}}" class="grid_bg  rounded block px-8 py-12 border-transparent transition duration-300 transform hover:scale-105 hover:shadow-xl hover:border-b-4">
+        <a href="{{url}}" class="grid_bg  rounded block px-8 py-12 border-transparent transition duration-300 transform hover:scale-105 hover:shadow-xl">
           <h3 class="category-card-title mb-5">{{name}}</h3>
           {{#if description}}
           	<p class="category-card-description text-left">{{description}}</p>
