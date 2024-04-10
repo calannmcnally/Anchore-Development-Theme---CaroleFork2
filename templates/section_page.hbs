@@ -1,8 +1,5 @@
 <style>
-  .pt-4 pb-14 mb-12 bg-section {
-    background-color: {{settings.brand_color_slategrey}};
-    
-  }
+
 
    .article-section {
     background-color: {{settings.brand_color_softwhite}};
@@ -32,7 +29,7 @@
       </div>
   {{#if section.sections}}
       {{#each section.sections}}
-        <section id="{{this.id}}" class="pt-4 pb-14 mb-12 bg-section">
+        <section id="{{this.id}}" class="pt-4 pb-14 mb-12 bg-white">
           <h2 class="section-subtitle">{{this.name}}</h2>
           <ul class="list-none pl-0 mt-7 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-4" subsection={{this.id}}>
             {{!-- Iterate through articles in this section --}}
@@ -49,7 +46,7 @@
       {{/each}}
   {{/if}}
   {{#if section.articles}}
-   <section id="{{section.id}}" class="article-section">
+   <section id="{{section.id}}" class="!article-section">
      <h2 class="section-subtitle">{{section.name}}</h2>
       <ul class="list-disc pl-8 mt-7" section={{section.id}}>
         {{!-- Iterate through articles in this section --}}
