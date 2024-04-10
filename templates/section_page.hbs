@@ -1,7 +1,19 @@
 <style>
+  .article-card {
+    background-color: #fff; /* Adjust based on your theme */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 20px;
+    margin-bottom: 20px; /* Space between cards */
+  }
+
+  .article-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
 
 
-   .article-section {
+  .article-section {
     background-color: {{settings.brand_color_softwhite}};
     border-radius:22px;
     padding:1rem;
@@ -9,8 +21,8 @@
   }
 
   .article-section:hover {
-  background-color:{{settings.brand_color_purewhite}};
-}
+    background-color:{{settings.brand_color_purewhite}};
+  }
 </style>
 <section class="anchore-bg p-12">
   <div class="container mx-auto flex flex-wrap items-center">
@@ -50,21 +62,20 @@
         </section>
       {{/each}}
   {{/if}}
-  {{#if section.articles}}
-  
-   <section id="{{section.id}}" class="article-section transform transition duration-300 ease-in-out shadow-sm hover:bg-white hover:scale-105 hover:shadow-lg hover:border-transparent hover:shadow-outline rounded-lg">
-     <h2 class="section-subtitle">{{section.name}}</h2>
-      <ul class="list-disc pl-8 mt-7" section={{section.id}}>
-        {{!-- Iterate through articles in this section --}}
-        {{#each section.articles}}
-          <li>
-                <a href="{{url}}" class="section-item-bullet">
-                {{this.title}}
-                </a>
-              </li>
-        {{/each}}
-     </ul>
-  </section>
-  {{/if}}
+{{#if section.articles}}
+<section id="{{section.id}}" class="article-section">
+  <h2 class="section-subtitle">{{section.name}}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4"> <!-- Adjust the column count as needed -->
+    {{!-- Iterate through articles in this section --}}
+    {{#each section.articles}}
+      <div class="article-card"> <!-- Use article-card for styling -->
+        <a href="{{url}}" class="section-item-bullet">
+          {{this.title}}
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</section>
+{{/if}}
   				
 </div>
