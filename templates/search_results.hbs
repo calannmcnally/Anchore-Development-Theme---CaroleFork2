@@ -1,16 +1,24 @@
-<section class="anchore-bg p-12">
+<div class="anchore-bg p-12">
   <div class="container mx-auto flex flex-wrap items-center">
     <!-- Left Column -->
     <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
-    <h1 class="mb-4 anchore-hero-header">{{section.name}}</h1>
-     
-      
+    <h1 class="mb-4 anchore-hero-header">{{settings.hero_banner_text}}</h1>
+     <!-- <h1 class=" text-3xl mb-4">Hero Text Here</h1>-->
+      <div class="anchore-hero-description">{{settings.hero_banner_description}}</div>
       <div class="max-w-md mx-auto lg:mx-0">
         {{search}}
       </div>
+ 
+      <div class="flex justify-center lg:justify-start space-x-4 mt-4">
+        {{#if settings.cta_one_title}}
+        <a href="{{settings.cta_one}}" class="btn-cta1">{{settings.cta_one_title}}</a>
+        {{/if}}
+        {{#if settings.cta_two_title}}
+        <a href="{{settings.cta_two}}" class="btn-cta2">{{settings.cta_two_title}}</a>
+        {{/if}}
       </div>
-      </div>
-</section>
+    </div>
+ 
 
 <div class="border-t border-gray-200"></div>
 <div class="container mx-auto px-4">
