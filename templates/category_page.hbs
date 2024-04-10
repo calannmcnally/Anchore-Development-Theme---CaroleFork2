@@ -1,51 +1,56 @@
 <style>
   html .category-sub-title {
-  	color: {{settings.brand_color_slategrey}};
+    color: {{settings.brand_color_slategrey}};
   }
 
-
-
-
   .grid_bg {
-   background-color: {{settings.brand_color_softwhite}};
-    border-radius:22px;
-    padding:1rem;
+    background-color: {{settings.brand_color_softwhite}};
+    border-radius: 22px;
+    padding: 1rem;
     border: 1px solid {{settings.brand_color_slategrey}};
   }
 
   .grid_bg:hover {
     background: {{settings.brand_color_purewhite}};
-  
-    
   }
 </style>
 
 <section class="anchore-bg p-12">
   <div class="container mx-auto flex flex-wrap items-center">
-  
     <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
-    <h1 class="mb-4 anchore-hero-title">Categories</h1>
-    <div class="max-w-md mx-auto lg:mx-0">
-        {{search}}
+      <h1 class="mb-4 anchore-hero-title">Categories</h1>
+      <div class="max-w-md mx-auto lg:mx-0">
+          {{search}}
       </div>
-
-    </section>
-
+    </div>
+  </div>
+</section>
 
 <section class="pb-20 mb-10">
   <div class="container mx-auto text-center px-6 py-4 md:py-0">
-  <div class="py-8 mb-5">
-        {{breadcrumbs}}
-      </div>
+    <div class="py-8 mb-5">
+      {{breadcrumbs}}
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {{#each sections}}
-        <a href="{{url}}" class="grid_bg transform transition duration-300 ease-in-out shadow-sm hover:bg-white hover:scale-105 hover:shadow-lg hover:border-transparent hover:shadow-outline rounded-lg">
-          <h3 class="category-card-title mb-5">{{name}}</h3>
-          {{#if description}}
-          	<p class="category-card-description text-left">{{description}}</p>
-          {{else}}
+        <div class="grid_bg transform transition duration-300 ease-in-out shadow-sm hover:scale-105 hover:shadow-lg hover:border-transparent rounded-lg">
+          <a href="{{url}}" class="hover:bg-white">
+            <h3 class="category-card-title mb-5">{{name}}</h3>
+            {{#if description}}
+              <p class="category-card-description text-left">{{description}}</p>
+            {{/if}}
+          </a>
+          <ul class="article-list">
+            {{#each articles}}
+              {{#if @index < 6}}
+                <li><a href="{{this.url}}">{{this.title}}</a></li>
+              {{/if}}
+            {{/each}}
+          </ul>
+          {{#if articles.length > 6}}
+            <a href="{{url}}" class="see-more">See more...</a>
           {{/if}}
-        </a>
+        </div>
       {{/each}}
     </div>
   </div>
