@@ -22,14 +22,7 @@
 
 <script>
 
-  <section class="anchore-bg p-12">
-  <div class="container mx-auto flex flex-wrap items-center">
-    <!-- Left Column -->
-    <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
-    <h1 class="mb-4 anchore-hero-title">Categories</h1>
-    <div class="max-w-md mx-auto lg:mx-0">
-        {{search}}
-      </div>
+
 
   globalThis.allArticles = [];
 globalThis.currentCategory = {
@@ -179,16 +172,16 @@ fetchAllArticles().then(() => {
 
 </script>
 
+<section class="anchore-bg p-12">
+  <div class="container mx-auto flex flex-wrap items-center">
+  
+    <div class="w-full lg:w-1/2 text-center lg:text-left px-4">
+    <h1 class="mb-4 anchore-hero-title">Categories</h1>
+    <div class="max-w-md mx-auto lg:mx-0">
+        {{search}}
+      </div>
 
-<section class="relative bg-cover bg-center overflow-hidden text-white sm:py-20" style="background-image: url('{{settings.homepage_background_image}}');">
-  <div class="container mx-auto text-center relative z-10 px-6 py-8 sm:py-12">
-    <h1 class="next-base-hero">{{settings.hero_banner_text}}</h1>
-    <div class="max-w-3xl mx-auto relative">
-        <img src="{{settings.search_icon}}" alt="Search Icon" class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 sm:w-9 sm:h-9" />
-        {{search class="next-base-search w-full mt-2 sm:mt-10 pl-14 pr-3 focus:outline-none focus:ring-2 focus:ring-blue-500" submit=false placeholder="Search for help articles using keywords"}}
-    </div>
-  </div>
-</section>
+    </section>
 
 <section class="pb-20 bg-gray-200">
   <div class="container mx-auto px-6 md:py-0">
