@@ -7,6 +7,10 @@
     padding:1rem;
     border: 1px solid {{settings.brand_color_slategrey}};
   }
+
+  .article-section:hover {
+  background-color:{{settings.brand_color_softwhite}};
+}
 </style>
 <section class="anchore-bg p-12">
   <div class="container mx-auto flex flex-wrap items-center">
@@ -47,7 +51,7 @@
       {{/each}}
   {{/if}}
   {{#if section.articles}}
-   <section id="{{section.id}}" class="article-section">
+   <section id="{{section.id}}" class="article-section transform transition duration-300 ease-in-out bg-transparent border border-gray-400 px-4 py-4 shadow-sm hover:bg-white hover:scale-105 hover:shadow-lg hover:border-transparent hover:shadow-outline hover:font-semibold hover:text-black next-card-title rounded-lg">
      <h2 class="section-subtitle">{{section.name}}</h2>
       <ul class="list-disc pl-8 mt-7" section={{section.id}}>
         {{!-- Iterate through articles in this section --}}
